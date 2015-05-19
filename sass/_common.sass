@@ -36,137 +36,119 @@
 //				display: none
 
 
-// fonts 
+// fonts
 +font(HelveticaNeueCyrRoman, HelveticaNeueCyrRoman)
-=hr
-	font-family: 'HelveticaNeueCyrRoman'
-+font(HelveticaNeueCyrThin, HelveticaNeueCyrThin)
-=ht
-	font-family: 'HelveticaNeueCyrThin'
 +font(HelveticaNeueCyrBold, HelveticaNeueCyrBold)
++font(HelveticaNeueCyrThin, HelveticaNeueCyrThin)
++font(HelveticaNeueCyrUltraLight, HelveticaNeueCyrUltraLight)
+
+=hr
+	font-family: 'HelveticaNeueCyrRoman', Helvetica, sans-serif
+
+=ht
+	font-family: 'HelveticaNeueCyrThin', Helvetica, sans-serif
+
 =hb
-	font-family: 'HelveticaNeueCyrBold'
+	font-family: 'HelveticaNeueCyrBold', Helvetica, sans-serif
+
+=hu
+	font-family: 'HelveticaNeueCyrUltraLight', Helvetica, sans-serif
+
 =pf
 	font-family: 'Playfair Display', serif
+
 =pfi
 	font-family: 'Playfair Display', serif
-	font-style: italic		
-	
-html
-	font-size: 10px
+	font-style: italic
+
+//variables
+$peach: #E8C29A
+$violet: #4C4369
+$gray: #B9B7C2
+$lavender: #8E88A3
+$orange: #f89a36
+
 body
-	+hr
-	font-size: 1.3rem 
+	font-size: 13px
 	line-height: 1.4
-
-
-// common blocks      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	background: #fff
+	+hr
+
+a
+	text-decoration: none
+
+h1, h2, h3, h4, h5, h6, strong
+	font-weight: normal
+
+// common blocks
+.svg
+	position: absolute
+	top: 0
+	left: 0
+	+opacity(0)
+
+.txt-center
+	text-align: center
+
+.onleft
+	float: left
+.onright
+	float: right
+
+.h1
+	font-size: 40px
+	color: $violet
+	text-transform: uppercase
+	letter-spacing: 0.08em
+	+ht
+	&.max-width
+		max-width: 750px
+		margin: 0 auto
+
+h2
+	text-align: center
+	font-size: 50px
+	text-transform: uppercase
+	color: #E8C29A
+	letter-spacing: 0.1em
+	line-height: 1.2
+	+hu
+
+h3
+	text-align: center
+	font-size: 18px
+	color: #f2ddc6
+	+pfi
+
+.button-wrap
+	font-size: 0
+	.button
+		display: inline-block
+		vertical-align: middle
+
+.button
+	padding: 14px 23px
+	text-transform: uppercase
+	font-size: 11px
+	background: #FFF
+	color: $peach
+	border-radius: 19px
+	line-height: 1
+	border: 1px solid $peach
+	+hb
+	+box
+	&:hover
+		color: #F0D6BC
+		border-color: #F0D6BC
+		+transition(all 0.3s ease)
+	&.is-peach
+		background: $peach
+		color: #fff
+		&:hover
+			background: #E0B686
+	&.is-orange
+		background: $orange
+		color: #fff
+		border: none
+		&:hover
+			background: #ef7e07

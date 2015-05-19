@@ -1,1 +1,152 @@
 // Normally mainpage styles
+.out
+	background: url(../img/horses.jpg) 0 bottom repeat-x
+	background-attachment: fixed
+	+transition(all 0.8s ease)
+	&.position
+		background-position: 0 114%
+
+.header
+	position: fixed
+	width: 100%
+	top: 60px
+	z-index: 9
+	&__in
+		max-width: 1540px
+		margin: 0 auto
+		padding: 0 20px
+		+box
+		+clr
+	&__bl
+		font-size: 0
+		&:first-child
+			margin-top: 9px
+	&__menu
+		display: inline-block
+		vertical-align: middle
+		svg
+			width: 39px
+			height: 24px
+	&__link
+		display: inline-block
+		margin-left: 20px
+		text-transform: uppercase
+		font-size: 11px
+		color: $peach
+		vertical-align: middle
+		+hb
+		&:hover
+			color: $gray
+	.logo
+		position: absolute
+		top: 25px
+		left: 50%
+		margin-left: -80px
+	.button
+		&:first-child
+			margin-right: 13px
+
+.logo
+	+transition(transform 0.8s ease)
+	&.small
+		+transform(scale(0.53) translateY(-125px) translateX(-50px))
+
+.more
+	position: relative
+	font-size: 11px
+	text-transform: uppercase
+	color: #F0E3D9
+	letter-spacing: 0.08em
+	+hb
+	&:before
+		content: ""
+		position: absolute
+		top: 50px
+		left: 50%
+		margin-left: -31px
+		+s(curve1)
+	span
+		position: relative
+		&:after
+			content: ""
+			position: absolute
+			bottom: -155px
+			left: 50%
+			margin-left: -7px
+			+s(line1)
+
+
+.section
+	max-width: 1500px
+	margin: 0 auto
+	padding-top: 60px
+	+box
+	&__in
+		max-width: 1080px
+		margin: 0 auto
+		padding-top: 16.5%
+		&.small-pad
+			padding-top: 105px
+	.nav
+		margin-top: 5%
+	.more
+		padding-top: 17%
+
+//navigation
+.nav
+	font-size: 0
+	li
+		position: relative
+		display: inline-block
+		padding: 0 25px
+		&:after
+			content: "\00B7"
+			position: absolute
+			left: 100%
+			margin-left: -2px
+			font-size: 20px
+			color: $peach
+		&:last-child
+			&:after
+				display: none
+	&__link
+		font-size: 20px
+		color: $lavender
+		+pfi
+
+//blog
+.blog
+	font-size: 0
+	margin-top: 42px
+	&__item
+		display: inline-block
+		width: 33%
+		height: 370px
+		padding: 0 22px
+		text-align: left
+		vertical-align: top
+		+box
+	&__in
+		width: 100%
+		height: 100%
+		padding: 20px
+		font-size: 18px
+		overflow: hidden
+		+box-shadow(0 1px 15px rgba(174, 158, 148, 0.43))
+		+box
+	&__img
+		height: 192px
+		margin-bottom: 32px
+		+box-shadow(inset 0 0 5px rgba(181, 170, 158, 0.25))
+		img
+			width: 100%
+			height: 100%
+	&__txt
+		height: 85px
+		color: $violet
+		overflow: hidden
+		line-height: 1.6
+		+pf
+	&__btn
+		display: block
+		margin-top: 43px

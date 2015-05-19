@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Homepage</title>
+	<title>Main</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
@@ -11,8 +11,96 @@
 </head>
 <body>
 <!-- BEGIN  out-->
+<div class="bg"></div>
 <div class="out">
-	
+	<div class="svg">
+		<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" height="23px" width="39px">
+			<path id="menu" fill="rgb( 232, 194, 154 )"
+			 d="M0,2 C0,2 0,0.999 0,0.999 C0,0.999 39,0.999 39,0.999 C39,0.999 39,2 39,2 C39,2 0,2 0,2 M0,12 C0,12 0,10.999 0,10.999 C0,10.999 39,10.999 39,10.999 C39,10.999 39,12 39,12 C39,12 0,12 0,12 M0,22 C0,22 0,20.999 0,20.999 C0,20.999 39,20.999 39,20.999 C39,20.999 39,22 39,22 C39,22 0,22 0,22 M0,3 C0,3 0,2 0,2 C0,2 39,2 39,2 C39,2 39,3 39,3 C39,3 0,3 0,3 M0,12.999 C0,12.999 0,12 0,12 C0,12 39,12 39,12 C39,12 39,12.999 39,12.999 C39,12.999 0,12.999 0,12.999 M0,22.999 C0,22.999 0,22 0,22 C0,22 39,22 39,22 C39,22 39,22.999 39,22.999 C39,22.999 0,22.999 0,22.999  "/>
+		</svg>
+	</div>
+	<!-- begin header  -->
+	<header class="header">
+		<div class="header__in">
+			<div class="header__bl onleft">
+				<a class="header__menu" href="#">
+					<svg><use xlink:href="#menu"></use></svg>
+				</a>
+				<a href="#all" class="header__link">Весь сайт</a>
+			</div>
+			<a href="#main" class="logo"><img src="img/logo.png" alt="logo"></a>
+			<div class="header__bl onright">
+				<div class="button-wrap">
+					<button class="button" type="button">Консультация</button>
+					<button class="button is-peach" type="button">Заказать</button>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- end header -->
+	<!-- begin fullpage  -->
+	<div class="fullpage">
+		<div class="section">
+			<div class="section__in txt-center">
+				<h1 class='h1 max-width'>Твой следующий шаг на пути к здоровью и долголетию</h1>
+				<ul class="nav">
+					<li data-menuanchor="products"><a href="#products" class="nav__link">Продукты</a></li>
+					<li data-menuanchor="blog"><a href="#blog" class="nav__link">Блог</a></li>
+					<li data-menuanchor="company"><a href="#company" class="nav__link">Компания</a></li>
+				</ul>
+				<p class="more"><span>Ниже больше</span></p>
+			</div>
+		</div>
+		<div class="section" data-anchor='products'>
+			<div class="section__in small-pad">
+				<h2 class="h2">Продукты</h2>
+				<h3 class="h3">Уникальные</h3>
+			</div>
+		</div>
+		<div class="section" data-anchor='blog'>
+			<div class="section__in small-pad">
+				<h2 class="h2">Наш блог</h2>
+				<h3 class="h3">Свежие события</h3>
+				<div class="txt-center">
+					<div class="blog">
+						<div class="blog__item">
+							<div class="blog__in">
+								<div class="blog__img">
+									<img src="img/blog1.jpg" alt="">
+								</div>
+								<p class="blog__txt">Кобылье молоко и кумыс - здоровье в каждой капле</p>
+							</div>
+						</div>
+						<div class="blog__item">
+							<div class="blog__in">
+								<div class="blog__img">
+									<img src="img/blog2.jpg" alt="">
+								</div>
+								<p class="blog__txt">Невероятная польза от кумыса.</p>
+							</div>
+						</div>
+						<div class="blog__item">
+							<div class="blog__in">
+								<div class="blog__img">
+									<img src="img/blog3.jpg" alt="">
+								</div>
+								<p class="blog__txt">Влияние кумыса на сердечно-сосудистую и репродуктивную систему</p>
+							</div>
+						</div>
+					</div>
+					<a class="blog__btn" href="#"><span class="button is-orange">Весь блог</span></a>
+				</div>
+			</div>
+		</div>
+		<div class="section" data-anchor='company'>
+			<div class="section__in small-pad">Company</div>
+		</div>
+		<div class="section" data-anchor='all'>
+			<div class="section__in small-pad">All</div>
+		</div>
+
+
+	</div>
 </div>
 <!-- END out-->
 <!-- load scripts -->
