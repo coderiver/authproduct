@@ -30,8 +30,6 @@ a { text-decoration: none; }
 
 h1, h2, h3, h4, h5, h6, strong { font-weight: normal; }
 
-.svg { position: absolute; top: 0; left: 0; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
-
 .txt-center { text-align: center; }
 
 .onleft { float: left; }
@@ -47,6 +45,7 @@ h3 { text-align: center; font-size: 18px; color: #f2ddc6; font-family: "Playfair
 
 .button-wrap { font-size: 0; }
 .button-wrap .button { display: inline-block; vertical-align: middle; }
+.button-wrap .button:not(:only-of-type):first-child { margin-right: 13px; }
 
 .button { padding: 14px 23px; text-transform: uppercase; font-size: 11px; background: white; color: #e8c29a; border-radius: 19px; line-height: 1; border: 1px solid #e8c29a; font-family: "HelveticaNeueCyrBold", Helvetica, sans-serif; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .button:hover { color: #f0d6bc; border-color: #f0d6bc; -moz-transition: all 0.3s ease; -o-transition: all 0.3s ease; -webkit-transition: all 0.3s ease; transition: all 0.3s ease; }
@@ -54,6 +53,14 @@ h3 { text-align: center; font-size: 18px; color: #f2ddc6; font-family: "Playfair
 .button.is-peach:hover { background: #e0b686; }
 .button.is-orange { background: #f89a36; color: white; border: none; }
 .button.is-orange:hover { background: #ef7e07; }
+
+.menu-button { position: relative; display: block; background: none; outline: none; border: none; -webkit-tap-highlight-color: transparent; -webkit-tap-highlight-color: transparent; }
+.menu-button .morph-shape { display: inline-block; vertical-align: middle; width: 40px; height: 40px; }
+.menu-button .morph-shape svg path, .menu-button .morph-shape svg line { stroke: #f89a36; stroke-width: 2px; -moz-transition: -moz-transform 0.3s; -o-transition: -o-transform 0.3s; -webkit-transition: -webkit-transform 0.3s; transition: transform 0.3s; }
+
+.menu-button.is-open .morph-shape svg path:first-of-type { -moz-transform: translate3d(0, -6px, 0); -ms-transform: translate3d(0, -6px, 0); -webkit-transform: translate3d(0, -6px, 0); transform: translate3d(0, -6px, 0); }
+
+.menu-button.is-open .morph-shape svg path:nth-of-type(2) { -moz-transform: translate3d(0, 6px, 0); -ms-transform: translate3d(0, 6px, 0); -webkit-transform: translate3d(0, 6px, 0); transform: translate3d(0, 6px, 0); }
 
 .l { *zoom: 1; }
 .l:after { content: " "; display: table; clear: both; }
@@ -63,17 +70,15 @@ h3 { text-align: center; font-size: 18px; color: #f2ddc6; font-family: "Playfair
 .out { background: url(../img/horses.jpg) 0 bottom repeat-x; background-attachment: fixed; -moz-transition: all 0.8s ease; -o-transition: all 0.8s ease; -webkit-transition: all 0.8s ease; transition: all 0.8s ease; }
 .out.position { background-position: 0 114%; }
 
-.header { position: fixed; width: 100%; top: 60px; z-index: 9; }
+.header { position: fixed; width: 100%; top: 6%; z-index: 9; }
 .header__in { max-width: 1540px; margin: 0 auto; padding: 0 20px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; *zoom: 1; }
 .header__in:after { content: " "; display: table; clear: both; }
 .header__bl { font-size: 0; }
 .header__bl:first-child { margin-top: 9px; }
 .header__menu { display: inline-block; vertical-align: middle; }
-.header__menu svg { width: 39px; height: 24px; }
 .header__link { display: inline-block; margin-left: 20px; text-transform: uppercase; font-size: 11px; color: #e8c29a; vertical-align: middle; font-family: "HelveticaNeueCyrBold", Helvetica, sans-serif; }
 .header__link:hover { color: #b9b7c2; }
 .header .logo { position: absolute; top: 25px; left: 50%; margin-left: -80px; }
-.header .button:first-child { margin-right: 13px; }
 
 .logo { -moz-transition: -moz-transform 0.8s ease; -o-transition: -o-transform 0.8s ease; -webkit-transition: -webkit-transform 0.8s ease; transition: transform 0.8s ease; }
 .logo.small { -moz-transform: scale(0.53) translateY(-125px) translateX(-50px); -ms-transform: scale(0.53) translateY(-125px) translateX(-50px); -webkit-transform: scale(0.53) translateY(-125px) translateX(-50px); transform: scale(0.53) translateY(-125px) translateX(-50px); }

@@ -81,12 +81,6 @@ h1, h2, h3, h4, h5, h6, strong
 	font-weight: normal
 
 // common blocks
-.svg
-	position: absolute
-	top: 0
-	left: 0
-	+opacity(0)
-
 .txt-center
 	text-align: center
 
@@ -125,6 +119,9 @@ h3
 	.button
 		display: inline-block
 		vertical-align: middle
+		&:not(:only-of-type)
+			&:first-child
+				margin-right: 13px
 
 .button
 	padding: 14px 23px

@@ -1,0 +1,26 @@
+// hamburger
+.menu-button
+	position: relative
+	display: block
+	background: none
+	outline: none
+	border: none
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+	-webkit-tap-highlight-color: transparent
+	.morph-shape
+		display: inline-block
+		vertical-align: middle
+		width: 40px
+		height: 40px
+
+	.morph-shape svg path,
+	.morph-shape svg line
+		stroke: $orange
+		stroke-width: 2px
+		+transition(transform 0.3s)
+
+.menu-button.is-open .morph-shape svg path:first-of-type
+	+transform(translate3d(0, -6px, 0))
+
+.menu-button.is-open .morph-shape svg path:nth-of-type(2)
+	+transform(translate3d(0, 6px, 0))

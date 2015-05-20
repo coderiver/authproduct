@@ -44,73 +44,73 @@ head.ready(function() {
 		e.preventDefault;
 	});
 
-	// (function() {
+	(function() {
 
-	// 	function SVGHamburger( el, options ) {
-	// 		this.el = el;
-	// 		this.init();
-	// 	}
+		function SVGHamburger( el, options ) {
+			this.el = el;
+			this.init();
+		}
 
-	// 	SVGHamburger.prototype.init = function() {
-	// 		this.shapeEl = this.el.querySelector( 'span.morph-shape' );
+		SVGHamburger.prototype.init = function() {
+			this.shapeEl = this.el.querySelector( 'span.morph-shape' );
 
-	// 		var s = Snap( this.shapeEl.querySelector( 'svg' ) );
-	// 		this.pathEl1 = s.select( 'path:nth-of-type(1)' );
-	// 		this.pathEl2 = s.select( 'path:nth-of-type(2)' );
-	// 		this.paths = {
-	// 			reset : {
-	// 				path1 : this.pathEl1.attr( 'd' ),
-	// 				path2 : this.pathEl2.attr( 'd' )
-	// 			},
-	// 			open : this.shapeEl.getAttribute( 'data-morph-open' ).split( ';' ),
-	// 			close : this.shapeEl.getAttribute( 'data-morph-close' ).split( ';' )
-	// 		};
+			var s = Snap( this.shapeEl.querySelector( 'svg' ) );
+			this.pathEl1 = s.select( 'path:nth-of-type(1)' );
+			this.pathEl2 = s.select( 'path:nth-of-type(2)' );
+			this.paths = {
+				reset : {
+					path1 : this.pathEl1.attr( 'd' ),
+					path2 : this.pathEl2.attr( 'd' )
+				},
+				open : this.shapeEl.getAttribute( 'data-morph-open' ).split( ';' ),
+				close : this.shapeEl.getAttribute( 'data-morph-close' ).split( ';' )
+			};
 
-	// 		this.isOpen = false;
+			this.isOpen = false;
 
-	// 		this.initEvents();
-	// 	};
+			this.initEvents();
+		};
 
-	// 	SVGHamburger.prototype.initEvents = function() {
-	// 		this.el.addEventListener( 'mouseover', this.toggleShow.bind(this) );
-	// 		this.el.addEventListener( 'mouseout', this.toggleHide.bind(this) );
-	// 	};
+		SVGHamburger.prototype.initEvents = function() {
+			this.el.addEventListener( 'mouseover', this.toggleShow.bind(this) );
+			this.el.addEventListener( 'mouseout', this.toggleHide.bind(this) );
+		};
 
-	// 	SVGHamburger.prototype.toggleShow = function() {
-	// 		var self = this,
-	// 			paths = this.isOpen ? this.paths.close : this.paths.open;
+		SVGHamburger.prototype.toggleShow = function() {
+			var self = this,
+				paths = this.isOpen ? this.paths.close : this.paths.open;
 
-	// 			setTimeout( function() { classie.add( self.el, 'is-open' ); }, 200 );
+				setTimeout( function() { classie.add( self.el, 'is-open' ); }, 200 );
 
-	// 		this.pathEl1.stop().animate( { 'path' : paths[0] }, 300, mina.easeout, function() {
-	// 			self.pathEl1.stop().animate( { 'path' : self.paths.reset.path1 }, 800, mina.elastic );
-	// 		} );
-	// 		this.pathEl2.stop().animate( { 'path' : paths[1] }, 300, mina.easeout, function() {
-	// 			self.pathEl2.stop().animate( { 'path' : self.paths.reset.path2 }, 800, mina.elastic );
-	// 		} );
+			this.pathEl1.stop().animate( { 'path' : paths[0] }, 300, mina.easeout, function() {
+				self.pathEl1.stop().animate( { 'path' : self.paths.reset.path1 }, 800, mina.elastic );
+			} );
+			this.pathEl2.stop().animate( { 'path' : paths[1] }, 300, mina.easeout, function() {
+				self.pathEl2.stop().animate( { 'path' : self.paths.reset.path2 }, 800, mina.elastic );
+			} );
 
-	// 		this.isOpen = !this.isOpen;
-	// 	};
+			this.isOpen = !this.isOpen;
+		};
 
 
-	// 	SVGHamburger.prototype.toggleHide = function() {
-	// 		var self = this,
-	// 			paths = this.isOpen ? this.paths.close : this.paths.open;
+		SVGHamburger.prototype.toggleHide = function() {
+			var self = this,
+				paths = this.isOpen ? this.paths.close : this.paths.open;
 
-	// 			setTimeout( function() { classie.remove( self.el, 'is-open' ); }, 200 );
+				setTimeout( function() { classie.remove( self.el, 'is-open' ); }, 200 );
 
-	// 		this.pathEl1.stop().animate( { 'path' : paths[0] }, 300, mina.easeout, function() {
-	// 			self.pathEl1.stop().animate( { 'path' : self.paths.reset.path1 }, 800, mina.elastic );
-	// 		} );
-	// 		this.pathEl2.stop().animate( { 'path' : paths[1] }, 300, mina.easeout, function() {
-	// 			self.pathEl2.stop().animate( { 'path' : self.paths.reset.path2 }, 800, mina.elastic );
-	// 		} );
+			this.pathEl1.stop().animate( { 'path' : paths[0] }, 300, mina.easeout, function() {
+				self.pathEl1.stop().animate( { 'path' : self.paths.reset.path1 }, 800, mina.elastic );
+			} );
+			this.pathEl2.stop().animate( { 'path' : paths[1] }, 300, mina.easeout, function() {
+				self.pathEl2.stop().animate( { 'path' : self.paths.reset.path2 }, 800, mina.elastic );
+			} );
 
-	// 		this.isOpen = !this.isOpen;
-	// 	};
+			this.isOpen = !this.isOpen;
+		};
 
-	// 	new SVGHamburger( document.getElementById('hamburger'));
+		new SVGHamburger( document.getElementById('hamburger'));
 
-	// })();
+	})();
 
 });
