@@ -15,12 +15,13 @@ head.ready(function() {
 	//     scrollFixedElements()
 	// });
 
-
+	//fullpage
 	$('.fullpage').fullpage({
 		scrollingSpeed: 800,
 		verticalCentered: false,
 		fixedElements: '.header',
-		anchors: ['main', 'products', 'blog', 'company', 'all'],
+		anchors: ['main', 'products', 'blog', 'about', 'all'],
+		responsive: 768,
 
 
 		onLeave: function(index, nextIndex, direction){
@@ -36,7 +37,22 @@ head.ready(function() {
 			else if(index !== 1 && nextIndex == 1 && direction == 'up'){
 				logo.removeClass('small');
 				container.removeClass('position');
-		   	}
+			}
+		},
+
+		afterResize: function(){
+
+			if($(window).width() < 768){
+				$('.logo').addClass('small');
+			}
+
+		},
+
+		afterLoad:function(){
+
+			if($(window).width() < 768){
+				$('.logo').addClass('small');
+			}
 		}
 	});
 
@@ -44,6 +60,7 @@ head.ready(function() {
 		e.preventDefault;
 	});
 
+	//svg menu btn animation
 	(function() {
 
 		function SVGHamburger( el, options ) {
@@ -112,5 +129,15 @@ head.ready(function() {
 		new SVGHamburger( document.getElementById('hamburger'));
 
 	})();
+
+	//slick slider
+	$('.slick-product').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		adaptiveHeight: true,
+		dots: true
+	});
 
 });

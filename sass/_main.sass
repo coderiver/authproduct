@@ -5,6 +5,11 @@
 	+transition(all 0.8s ease)
 	&.position
 		background-position: 0 114%
+	+r(768)
+		background-attachment: inherit
+		+transition(all 0s)
+		&.position
+			background-position: center bottom
 
 .header
 	position: fixed
@@ -39,6 +44,12 @@
 		top: 25px
 		left: 50%
 		margin-left: -80px
+	+r(768)
+		.header__bl
+			&:first-child
+				margin-top: 0
+		.header__link
+			display: none
 
 .logo
 	+transition(transform 0.8s ease)
@@ -108,6 +119,46 @@
 		color: $lavender
 		+pfi
 
+
+//product
+.slick-product
+	margin-top: 40px
+	.product__slide
+		+clr
+	.product__img
+		width: 50%
+	.product__txt
+		width: 50%
+		padding: 20px 5% 0
+		font-size: 13px
+		color: $lavender
+		+box
+		.button
+			margin-top: 35px
+			text-transform: uppercase
+			letter-spacing: 0.1em
+	.product__ttl
+		padding-top: 20px
+		font-size: 40px
+		color: $violet
+		line-height: 1.25
+		+pf
+	.slick-dots
+		text-align: left
+		top: 50%
+		right: inherit
+		li
+			display: block
+			padding: 11px 0
+			button
+				width: 8px
+				height: 8px
+				background: #F0E3D9
+				+box-shadow(none)
+			&.slick-active
+				button
+					background: $lavender
+
 //blog
 .blog
 	font-size: 0
@@ -130,17 +181,95 @@
 		+box
 	&__img
 		height: 192px
-		margin-bottom: 32px
+		margin-bottom: 24px
 		+box-shadow(inset 0 0 5px rgba(181, 170, 158, 0.25))
 		img
 			width: 100%
 			height: 100%
 	&__txt
 		height: 85px
+		margin-bottom: 10px
 		color: $violet
 		overflow: hidden
 		line-height: 1.6
 		+pf
+	&__date
+		color: $peach
+		font-size: 13px
+		+hl
 	&__btn
 		display: block
 		margin-top: 43px
+
+//about
+.about
+	&__ttl
+		margin-top: 4.3%
+		text-align: center
+		font-size: 40px
+		color: $violet
+		+pf
+	&__bl
+		position: relative
+		margin-top: 4%
+		padding: 0 5%
+		+clr
+		&:before
+			content: ""
+			position: absolute
+			top: -30px
+			left: 50%
+			margin-left: -132px
+			width: 264px
+			height: 339px
+			background: url(../img/history.png) 0 0 no-repeat
+			z-index: -1
+	&__txt
+		max-width: 450px
+		padding-top: 20px
+		font-size: 13px
+		color: $lavender
+		line-height: 2
+		+box
+		&:first-child
+			padding-right: 20px
+	&__btn
+		margin-top: 8%
+		text-align: center
+
+//all
+.all
+	margin-top: 50px
+	text-align: center
+	font-size: 0
+	&__list
+		display: inline-block
+		width: 25%
+		max-width: 235px
+		padding: 0 3%
+		text-align: left
+		vertical-align: top
+		+box
+		li
+			margin: 10px 0
+			&:first-child
+				margin: 0 0 15px
+				a
+					font-size: 18px
+					color: $violet
+		a
+			display: inline-block
+			text-decoration: underline
+			font-size: 16px
+			color: #DEB78E
+			+pf
+			+transition(all 0.3s ease)
+			&:hover
+				text-decoration: none
+	+r(768)
+		.all__list
+			width: 100%
+			display: block
+			margin: 0 auto 20px
+			text-align: center
+
