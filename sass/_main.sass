@@ -42,11 +42,17 @@
 			+s(long-curve)
 		span
 			padding: 25px 0
+	+r(1280)
+		.more
+			&:before
+				top: 52px
+				left: 50%
+				margin-left: -15.5px
+				+s(small-curve)
 	+rwh(768, 685)
 		position: static
 		.more
 			display: none
-
 
 .fullpage
 	z-index: 3
@@ -98,11 +104,30 @@
 	top: 25px
 	left: 50%
 	margin-left: -81px
-	+transition(transform 0.8s ease)
+	img
+		+transition(all 0.7s ease)
+	&:before
+		content: ""
+		position: absolute
+		left: 50%
+		margin-left: -50px
+		width: 100px
+		height: 74px
+		background: url(../img/logo-small.png) no-repeat
+		+opacity(0)
+		+transition(opacity 0.8s ease)
 	&.small
-		+transform(scale(0.53) translateY(-125px) translateX(-30px))
-	+rwh(768, 650)
-		+transform(scale(0.53) translateY(-125px))
+		img
+			+opacity(0)
+			+transform(scale(0.53) translateY(-50px))
+		&:before
+			+opacity(1)
+	+rwh(768, 685)
+		img
+			+opacity(0)
+			+transform(scale(0.53) translateY(-50px))
+		&:before
+			+opacity(1)
 
 .more
 	display: none
@@ -114,7 +139,7 @@
 	letter-spacing: 0.08em
 	z-index: 0
 	+hb
-	+transition(bottom 0.9s ease)
+	+transition(all 0.9s ease)
 	&:before
 		content: ""
 		position: absolute
@@ -131,14 +156,24 @@
 		bottom: 6%
 		span
 			+opacity(0)
-	+rwh(768, 685)
-		display: block
+	&.is-none
+		+opacity(0)
 
 .section
 	max-width: 1500px
 	margin: 0 auto
 	padding-top: 60px
 	+box
+	&:after
+		display: none
+		content: ""
+		position: absolute
+		left: 50%
+		bottom: -125px
+		margin-left: -15.5px
+		background: url(../img/icons/small-curve.png) no-repeat
+		width: 31px
+		height: 100px
 	&__in
 		max-width: 1080px
 		margin: 0 auto
@@ -155,8 +190,17 @@
 			.section__in
 				padding-top: 170px
 		.section__in
-			padding-top: 130px
+			padding-top: 150px
+	+rwh(768, 685)
+		position: relative
+		&:after
+			display: block
+		&:first-child,
+		&:last-child
+			&:after
+				display: none
 		.more
+			display: block
 			padding-top: 125px
 
 
@@ -181,8 +225,15 @@
 	&__link
 		font-size: 20px
 		color: $lavender
+		+opacity(0.8)
 		+pfi
-		+r(768)
+		&:hover
+			+opacity(1)
+	+r(768)
+		margin-top: 30px
+		li
+			padding: 0 15px
+		.nav__link
 			font-size: 14px
 
 //product
@@ -192,6 +243,10 @@
 		+clr
 	.product__img
 		width: 50%
+		.product__ttl
+			display: none
+			text-align: center
+			font-size: 24px
 	.product__txt
 		width: 50%
 		padding: 20px 5% 0
@@ -201,8 +256,9 @@
 			margin-top: 35px
 			text-transform: uppercase
 			letter-spacing: 0.1em
-		p
-			letter-spacing: 0.03em
+	.product__p
+		line-height: 24px
+		letter-spacing: 0.03em
 	.product__ttl
 		margin-bottom: 30px
 		padding-top: 20px
@@ -228,6 +284,25 @@
 			&.slick-active
 				button
 					background: $lavender
+	+r(768)
+		.product__img,
+		.product__txt
+			float: none
+			width: 100%
+		.product__img
+			img
+				margin: 0 auto
+			.product__ttl
+				display: block
+		.product__txt
+			padding: 20px 0 0
+			font-size: 12px
+			.button
+				display: block
+				max-width: 260px
+				margin: 35px auto 0
+		.product__ttl
+			display: none
 
 //blog
 .blog
@@ -269,7 +344,7 @@
 		+hl
 	&__btn
 		display: block
-		margin-top: 43px
+		margin-top: 23px
 	&.slick-slider
 		.slick-prev
 			left: 10px
@@ -321,6 +396,7 @@
 			background: url(../img/history.png) 0 0 no-repeat
 			z-index: -1
 	&__txt
+		width: 50%
 		max-width: 450px
 		padding-top: 20px
 		font-size: 13px
@@ -332,6 +408,25 @@
 	&__btn
 		margin-top: 8%
 		text-align: center
+	+rwh(1280, 650)
+		.about__bl
+			&:before
+				top: -60px
+				+transform(scale(0.7))
+		.about__txt
+			font-size: 12px
+	+r(768)
+		.about__bl
+			&:before
+				display: none
+		.about__ttl
+			font-size: 24px
+		.about__txt
+			float: none
+			width: 100%
+			margin: 0 auto
+			padding-right: 0
+			text-align: center
 
 //all
 .all
@@ -366,6 +461,26 @@
 		.all__list
 			width: 100%
 			display: block
-			margin: 0 auto 20px
+			margin: 0 auto 45px
 			text-align: center
 
+//footer
+.footer
+	&.is-fixed
+		position: fixed
+		left: 0
+		right: 0
+		bottom: 15%
+		padding: 0 20px
+		z-index: 9
+		+opacity(0)
+		+transition(all 0.3s ease)
+		p
+			color: $violet
+			a
+				color: $violet
+				&:hover
+					text-decoration: underline
+		&.is-visible
+			bottom: 20%
+			+opacity(1)

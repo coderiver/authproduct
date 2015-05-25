@@ -15,10 +15,10 @@
 // ## animations easing, see easings.net for full list and examples, tnx @ai
 //     transition: all 1.2s ceaser($ease-in)
 // ## gradient example
-//     +background-image(linear-gradient(#232323, #5c5c5c));
-//     +g(#232323, #5c5c5c);
+//     +background-image(linear-gradient(#232323, #5c5c5c))
+//     +g(#232323, #5c5c5c)
 //	   horizontal
-//     +gh(#232323, #5c5c5c);
+//     +gh(#232323, #5c5c5c)
 // ## making bw-images
 //     img
 //			@extend %gray
@@ -30,7 +30,7 @@
 // ## use cycles
 //     @for $i from 1 through 3
 //       .item-#{$i}
-//			width: 2em * $i;
+//			width: 2em * $i
 //     @each $s in a,b,c
 // 	    	#{$s}
 //				display: none
@@ -77,6 +77,9 @@ body
 	line-height: 1.4
 	background: #fff
 	+hr
+
+.out
+	min-width: 320px
 
 a
 	text-decoration: none
@@ -158,5 +161,34 @@ h1, h2, h3, h4, h5, h6, strong
 		background: $orange
 		color: #fff
 		border: none
+		text-align: center
+		a
+			color: #fff
 		&:hover
 			background: #ef7e07
+	.morph-shape
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+	&.button--line
+		height: 50px
+		position: relative
+		border: none
+		svg
+			fill: none
+			stroke: #e8c29a
+			stroke-width: 2px
+			stroke-linecap: round
+	&.button--fill
+		height: 50px
+		position: relative
+		border: none
+		svg
+			fill: #e8c29a
+			stroke: #e8c29a
+			stroke-width: 2px
+			stroke-linecap: round
+		.button__text
+			color: #FFF
