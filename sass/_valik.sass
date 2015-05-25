@@ -10,25 +10,260 @@
 .breadcrumbs
 	font-size: 0
 	text-align: center
-	padding: 25px 0 0 
+	padding: 25px 0 50px
 	li
 		display: inline-block
 		vertical-align: top
+		padding: 0 16px
+		position: relative
+		&:first-child
+			&:before
+				display: none
+		&:before
+			content: "" 
+			position: absolute
+			top: 8px
+			left: 0
+			width: 3px
+			height: 3px
+			background-color: #E8C29A
+			+border-radius(50%)
 	a
 		+pfi
 		font-size: 13px
 		letter-spacing: 0.025em 
 		color: #4c4369
+		+opacity(0.7)
+		+transition(opacity 0.3s)
+		&:hover
+			+opacity(1)
 
 .tags
 	font-size: 0
 	text-align: center
+	padding: 25px 0 0 
 	li
 		display: inline-block
 		vertical-align: top
+		padding: 0 13px 
 	a
 		+pf
 		font-size: 16px
 		color: #8e88a3
+		+transition(color 0.3s)
 		&:hover, &.is-active
 			color: #e8c29a 
+
+.pages
+	font-size: 0
+	text-align: center
+	padding: 45px 0 
+	li
+		display: inline-block
+		vertical-align: top
+		padding: 0 6px 
+	a
+		+pf
+		font-size: 18px
+		color: #8e88a3
+		+transition(color 0.3s)
+		&:hover, &.is-active
+			color: #e8c29a
+
+.section
+	&.is-blog
+		.blog__item
+			margin-bottom: 44px
+		.blog__in
+			+transition(box-shadow 0.3s)
+			&:hover
+				+box-shadow(0 1px 60px rgba(174, 158, 148, 0.5))
+				
+.footer
+	padding: 180px 20px 45px
+	&__in
+		+clr
+		text-align: center
+		max-width: 1500px
+		margin: 0 auto
+	p
+		+hr
+		font-size: 13px
+		letter-spacing: 0.03em 
+		padding: 10px 0 
+		color: #fff
+		a
+			color: #fff 
+	&__copy
+		float: left
+		text-align: left
+	&__made
+		float: right
+		text-align: right
+	.button
+		margin: 0 10px 
+
+.in-title
+	+pf
+	line-height: 1.25
+	color: #4c4369
+	font-size: 40px		
+.inner
+	max-width: 803px
+	padding: 0 20px 
+	margin: 0 auto
+	p, .inner__box
+		padding: 0 10% 
+	&__heading
+		+pf
+		line-height: 1.25
+		color: #4c4369
+	.in-title
+		padding: 0 2% 25px 10% 
+	&__heading
+		padding: 0 8% 0 10% 
+		font-size: 30px
+		margin-bottom: 45px
+	img
+		max-width: 100%
+		margin-bottom: 30px
+	p
+		+hl
+		font-size: 16px
+		line-height: 1.75
+		letter-spacing: 0.03em
+		color: #8e88a3 
+		margin-bottom: 30px
+		b
+			+hr
+			font-weight: normal
+	blockquote
+		+pfi
+		font-size: 24px
+		line-height: 1.5
+		color: #e8c29a
+		margin: 0 -10px 30px 0 
+	&__news
+		padding: 0 0 50px  
+		p
+			margin-bottom: 10px
+			padding: 0 9% 0 10% 
+		img
+			max-width: 300px
+			float: left
+			margin: 10px 35px 10px 0 
+
+.back
+	display: inline-block
+	position: relative
+	padding: 4px 0 3px 46px
+	+hb
+	font-size: 11px
+	text-transform: uppercase
+	color: #e8c29a
+	&:before
+		content: ""
+		position: absolute
+		top: 50%
+		left: 0
+		margin: -10px 0 0 
+		+svg(back, 33, 20)
+
+.gallery
+	margin-bottom: 55px
+	&__wrap
+		position: relative
+		text-align: center
+	&__slider
+		position: relative
+	.slick-prev, .slick-next
+		position: absolute
+		top: 50%
+		margin-top: -11px
+		z-index: 200 
+		&:before
+			display: none
+	.slick-prev
+		+svg(arr-prev, 49, 21)
+		left: -87px
+	.slick-next
+		+svg(arr-next, 49, 21)
+		right: -87px
+	&__pager
+		display: inline-block
+		vertical-align: top
+		+pf
+		font-size: 18px
+		color: #8e88a3 
+		position: relative
+		padding: 0 20px 
+	&__prev, &__next
+		position: absolute
+		top: 50%
+	&__prev
+		left: 0
+		+s(cap-left)
+	&__next
+		right: 0
+		+s(cap-right)
+	&__current
+		font-size: 36px
+	img
+		margin-bottom: 20px
+
+.share
+	font-size: 0
+	text-align: center
+	padding: 50px 0  
+	li
+		padding: 0 15px 
+		display: inline-block
+		vertical-align: middle
+	a
+		display: inline-block
+		
+
+.number
+	position: relative
+	font-size: 0
+	&__input
+		display: inline-block
+		vertical-align: top
+		width: 35px
+		height: 35px
+		line-height: 35px
+		text-align: center
+		+hl
+		font-size: 16px
+		color: #4c4369 
+		border: 1px solid #C8C6CF
+		background: #fff 
+		margin: 0 9px 
+	&__plus,
+	&__minus
+		display: inline-block
+		vertical-align: top
+		width: 37px
+		height: 37px
+		color: #89859a
+		background: rgba(221, 218, 231, 0.5)
+		position: relative
+		&:before, &:after
+			position: absolute
+			content: "" 
+			background: #89859a 
+		&:before
+			top: 18px
+			height: 1px
+			left: 11px
+			right: 11px
+	&__plus
+		&:after
+			top: 11px
+			bottom: 11px
+			left: 18px
+			width: 1px
+.order
+	max-width: 1024px
+	padding: 0 20px 
+	margin: 0 auto
