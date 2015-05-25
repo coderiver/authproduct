@@ -263,7 +263,271 @@
 			bottom: 11px
 			left: 18px
 			width: 1px
+
+.price
+	+pf
+	font-size: 36px
+	line-height: 24px
+	color: #4c4369
+	small
+		font-size: 18px		
 .order
 	max-width: 1024px
 	padding: 0 20px 
 	margin: 0 auto
+	&__tabs
+		font-size: 0
+		text-align: center
+		li
+			display: inline-block
+			vertical-align: top
+			padding: 0 5px 
+		a
+			+pf
+			font-size: 40px
+			line-height: 1
+			color: #E8C29A
+			display: inline-block
+			padding: 3px 22px 8px
+			&.is-active
+				color: #4c4369
+				background-color: #F6F5F7
+				+border-radius(24px)
+				span
+					border: none
+			span
+				border-bottom: 1px dotted #E8C29A
+	&__inner
+		+clr
+		padding: 25px 0 0 
+	&__filter
+		float: left
+		width: 200px
+		padding: 25px 0 0 
+		li
+			padding: 0 15px 10px
+			a
+				display: inline-block
+				max-width: 130px
+				padding: 8px 20px 
+				color: #4C4369
+				+pf
+				font-size: 16px
+				&.is-active
+					border: 1px solid #E8C29A
+					+border-radius(19px)
+					span
+						border-bottom: none
+				&:hover
+					color: #E8C29A
+					span
+						border-bottom: none
+				span
+					border-bottom: 1px solid rgba(232, 194, 154, 0.7)
+	&__content
+		overflow: hidden
+	&__img
+		max-width: 350px
+		width: 100%
+		float: left
+		img
+		width: 100%
+		margin-right: 90px
+	&__info
+		overflow: hidden
+		padding: 35px 0 0 
+		&.is-small
+			max-width: 240px
+		.spinner
+			float: left
+		.price
+			float: right
+		p
+			+pfi
+			font-size: 15px
+			color: #89859a 
+	&__label
+		+pfi
+		font-size: 18px
+		color: #4c4369
+		line-height: 1.4 
+		margin-bottom: 25px
+		display: block
+	&__btn
+		clear: both
+		padding: 26px 0 0
+		border-top: 1px solid #e0e0e0
+		.button
+			width: 100%
+			text-align: center
+			margin-bottom: 30px
+	&__price
+		+clr
+		padding: 0 0 28px 
+	&__pack
+		+clr
+		font-size: 0
+		text-align: center
+		padding: 0 0 15px 
+		p
+			font-size: 18px
+			padding: 5px 0 0 
+		img
+			display: inline-block
+			vertical-align: middle
+			width: 81px
+		span
+			padding: 15px 10px 0
+			+pf
+			font-size: 24px
+			line-height: 1
+			color: #8e88a3
+			display: inline-block
+			vertical-align: middle
+		ul
+			display: inline-block
+			vertical-align: middle
+			padding: 0 0 0 6px 
+			li
+				display: inline-block
+				vertical-align: top
+				+s(bottle)
+				margin: 0 0 0 -6px
+	&__quantity
+		text-align: center
+		font-size: 0
+		padding: 17px 0 19px 
+		border-top: 1px solid #f1f0f3
+		.spinner
+			float: none
+			display: inline-block
+		span
+			display: block
+			+hl
+			font-size: 13px
+			letter-spacing: 0.03em
+			color: #4c4369 
+			margin-bottom: 10px
+	&__box
+		font-size: 0
+		text-align: center
+		border-top: 1px solid #f1f0f3
+		padding: 10px 0 15px 
+		.price
+			float: none
+	&__block
+		display: none
+		&.is-active
+			display: block
+			
+
+.popup
+	padding: 75px 20px 20px
+	min-width: 280px 
+	&-wrap
+		position: fixed
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		background: rgba(72, 61, 50, 0.8) 
+		z-index: 300 
+		overflow: auto
+		display: none
+		&.is-active
+			display: block
+	&__close
+		+s(close)
+		position: absolute
+		top: 16px
+		right: 17px
+		cursor: pointer
+	&__inner
+		max-width: 465px
+		margin: 0 auto
+		background: #fff
+		+box-shadow(0 1px 182px #483D32) 
+		position: relative
+		padding: 90px 0 0 
+	&__logo
+		position: absolute
+		top: -55px
+		left: 50%
+		margin-left: -90px
+		width: 180px
+		height: 180px
+		background: #fff
+		+border-radius(50%)
+		padding: 38px 0 0
+		+box 
+		img
+			width: 100px
+			display: block
+			margin: 0 auto
+	&__form
+		max-width: 298px
+		padding: 0 20px
+		margin: 0 auto  
+		position: relative
+		z-index: 2 
+	&__title
+		text-align: center
+		+pf
+		font-size: 40px
+		line-height: 1.25
+		color: #4c4369
+		display: block
+		margin-bottom: 20px
+	&__bottom
+		padding: 8px 0 80px
+		text-align: center
+		.button
+			width: 100%
+			+box
+			margin-bottom: 20px
+		p
+			+pfi
+			font-size: 15px
+			color: #89859a
+			
+.field
+	margin-bottom: 15px
+	label
+		display: block
+	span
+		+opacity(0.5)
+		+hr
+		font-size: 11px
+		letter-spacing: 0.1em 
+		color: #c2bfcd
+		text-transform: uppercase
+		display: block
+		margin: 0 0 5px 
+		small
+			+pfi
+			font-size: 14px
+			color: #E8C29A
+
+.input, .textarea
+	+hr
+	font-size: 11px
+	letter-spacing: 0.1em 
+	color: #89859a
+	border: 1px solid #a19dae
+	background: #fff
+	padding: 13px
+	width: 100%
+	+box
+	+opacity(0.5)
+	+transition(all 0.3s)
+	&:focus, &:hover
+		+opacity(1)
+	&.error
+		color: #FF4141
+		border-color: #ff1212 
+		+opacity(0.8)
+.textarea
+	height: 68px
+	resize: none
+label.error
+	font-size: 0
