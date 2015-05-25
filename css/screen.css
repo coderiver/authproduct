@@ -233,3 +233,15 @@ html, body { margin: 0; padding: 0; overflow: hidden; /*Avoid flicker on slides 
 .slick-dots li:before { display: none; }
 .slick-dots button { display: block; width: 6px; height: 6px; background: white; -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); cursor: pointer; font: 0/0 a; text-shadow: none; color: transparent; border-radius: 50%; }
 .slick-dots button:hover { box-shadow: none; }
+
+.header .logo_inner { top: 0; width: 100px; margin-left: -50px; }
+.header .logo_inner img { width: 100%; }
+
+.breadcrumbs { font-size: 0; text-align: center; padding: 25px 0 0; }
+.breadcrumbs li { display: inline-block; vertical-align: top; }
+.breadcrumbs a { font-family: "Playfair Display", serif; font-style: italic; font-size: 13px; letter-spacing: 0.025em; color: #4c4369; }
+
+.tags { font-size: 0; text-align: center; }
+.tags li { display: inline-block; vertical-align: top; }
+.tags a { font-family: "Playfair Display", serif; font-size: 16px; color: #8e88a3; }
+.tags a:hover, .tags a.is-active { color: #e8c29a; }
