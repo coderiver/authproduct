@@ -11,17 +11,42 @@
 		left: 0
 		right: 0
 		bottom: 0
-		background: url(../img/horses.png) 50% bottom repeat-x
+		background-image: url(../img/horses.png)
+		background-position: 50% bottom
+		background-repeat: repeat-x
 		background-attachment: fixed
 		z-index: 1
 		+transition(all 0.8s ease)
 		&.position
 			background-position: 50% 114%
-		+r(768)
+		+r(1028)
+			-webkit-background-size: contain
+			-o-background-size: contain
+			background-size: contain
+		+rwh(768, 685)
+			position: static
+			height: 291px
 			background-attachment: inherit
-			+transition(all 0s)
+			+transition(all 0s ease)
 			&.position
 				background-position: center bottom
+	.more
+		display: block
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 28%
+		&:before
+			top: -130px
+			margin-left: -31px
+			+s(long-curve)
+		span
+			padding: 25px 0
+	+rwh(768, 685)
+		position: static
+		.more
+			display: none
+
 
 .fullpage
 	z-index: 3
@@ -54,56 +79,60 @@
 		+hb
 		&:hover
 			color: $gray
-	.logo
-		position: absolute
-		top: 25px
-		left: 50%
-		margin-left: -80px
 	+r(768)
+		top: 0
+		min-height: 100px
+		background: #fff
 		.header__bl
 			&:first-child
 				margin-top: 0
+		.header__in
+			padding: 5px 25px 0
 		.header__link
 			display: none
+		.logo
+			top: 50px
 
 .logo
+	position: absolute
+	top: 25px
+	left: 50%
+	margin-left: -81px
 	+transition(transform 0.8s ease)
 	&.small
-		+transform(scale(0.53) translateY(-125px) translateX(-50px))
+		+transform(scale(0.53) translateY(-125px) translateX(-30px))
+	+rwh(768, 650)
+		+transform(scale(0.53) translateY(-125px))
 
 .more
-	position: absolute
-	left: 0
-	right: 0
+	display: none
+	position: relative
 	text-align: center
-	bottom: 28%
-	margin-left: -49px
 	font-size: 11px
 	text-transform: uppercase
 	color: #F0E3D9
 	letter-spacing: 0.08em
 	z-index: 0
 	+hb
+	+transition(bottom 0.9s ease)
 	&:before
 		content: ""
 		position: absolute
-		top: -130px
+		top: 52px
 		left: 50%
-		margin-left: -31px
-		+s(curve1)
+		margin-left: -15.5px
+		+s(small-curve)
 	span
 		position: relative
-		+transition(opacity 0.9s ease)
-		&:after
-			content: ""
-			position: absolute
-			bottom: -155px
-			left: 50%
-			margin-left: -7px
-			+s(line1)
+		padding: 20px 0
+		background: #fff
+		+transition(opacity 0.5s ease)
 	&.is-hidden
+		bottom: 6%
 		span
 			+opacity(0)
+	+rwh(768, 685)
+		display: block
 
 .section
 	max-width: 1500px
@@ -120,6 +149,16 @@
 		margin-top: 5%
 	.more
 		padding-top: 17%
+	+r(768)
+		padding: 0 25px
+		&:first-child
+			.section__in
+				padding-top: 170px
+		.section__in
+			padding-top: 130px
+		.more
+			padding-top: 125px
+
 
 //navigation
 .nav
@@ -131,8 +170,9 @@
 		&:after
 			content: "\00B7"
 			position: absolute
+			top: 50%
 			left: 100%
-			margin-left: -2px
+			margin: -14px 0 0 -2px
 			font-size: 20px
 			color: $peach
 		&:last-child
@@ -142,7 +182,8 @@
 		font-size: 20px
 		color: $lavender
 		+pfi
-
+		+r(768)
+			font-size: 14px
 
 //product
 .slick-product
@@ -154,14 +195,16 @@
 	.product__txt
 		width: 50%
 		padding: 20px 5% 0
-		font-size: 13px
 		color: $lavender
 		+box
 		.button
 			margin-top: 35px
 			text-transform: uppercase
 			letter-spacing: 0.1em
+		p
+			letter-spacing: 0.03em
 	.product__ttl
+		margin-bottom: 30px
 		padding-top: 20px
 		font-size: 40px
 		color: $violet
@@ -170,7 +213,10 @@
 	.slick-dots
 		text-align: left
 		top: 50%
+		left: 10px
 		right: inherit
+		bottom: inherit
+		+transform(translateY(-50%))
 		li
 			display: block
 			padding: 11px 0
@@ -188,18 +234,18 @@
 	font-size: 0
 	margin-top: 42px
 	&__item
-		display: inline-block
-		width: 33%
+		text-align: center
 		height: 370px
-		padding: 0 22px
+		padding: 22px 0
 		text-align: left
 		vertical-align: top
 		+box
 	&__in
-		width: 100%
-		height: 100%
+		max-width: 315px
+		margin: 0 auto
 		padding: 20px
 		font-size: 18px
+		background-color: #fff
 		overflow: hidden
 		+box-shadow(0 1px 15px rgba(174, 158, 148, 0.43))
 		+box
@@ -224,6 +270,32 @@
 	&__btn
 		display: block
 		margin-top: 43px
+	&.slick-slider
+		.slick-prev
+			left: 10px
+			&:before
+				content: ""
+				+svg(prev, 14, 33)
+		.slick-next
+			right: 10px
+			&:before
+				content: ""
+				+svg(next, 14, 33)
+	+r(768)
+		.blog__in
+			max-width: 245px
+			padding: 17px 13px
+			font-size: 14px
+		.blog__date
+			font-size: 12px
+		.blog__btn
+			margin-top: 28px
+		&.slick-slider
+			.slick-prev
+				left: -10px
+			.slick-next
+				right: -10px
+
 
 //about
 .about
