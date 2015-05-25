@@ -16,45 +16,49 @@ head.ready(function() {
 	// });
 
 	//fullpage
-	$('.fullpage').fullpage({
-		scrollingSpeed: 800,
-		verticalCentered: false,
-		fixedElements: '.header',
-		anchors: ['main', 'products', 'blog', 'about', 'all'],
-		responsive: 768,
+	if ($('.fullpage').length > 0){
+		$('.fullpage').fullpage({
+			scrollingSpeed: 800,
+			verticalCentered: false,
+			fixedElements: '.header',
+			anchors: ['main', 'products', 'blog', 'about', 'all'],
+			responsive: 768,
 
 
-		onLeave: function(index, nextIndex, direction){
-			var slide = $(this),
-				logo 	  	 = $('.logo'),
-				container 	 = $('.out');
+			onLeave: function(index, nextIndex, direction){
+				var logo 	  = $('.logo'),
+					container = $('.bg'),
+					more 	  = $('.more');
 
-			if(index == 1 && direction == 'down'){
-				logo.addClass('small');
-				container.addClass('position');
+				if(index == 1 && direction == 'down'){
+					logo.addClass('small');
+					container.addClass('position');
+					more.addClass('is-hidden');
+				}
+
+				else if(index !== 1 && nextIndex == 1 && direction == 'up'){
+					logo.removeClass('small');
+					container.removeClass('position');
+					more.removeClass('is-hidden');
+				}
+			},
+
+			afterResize: function(){
+
+				if($(window).width() < 768){
+					$('.logo').addClass('small');
+				}
+
+			},
+
+			afterLoad:function(){
+
+				if($(window).width() < 768){
+					$('.logo').addClass('small');
+				}
 			}
-
-			else if(index !== 1 && nextIndex == 1 && direction == 'up'){
-				logo.removeClass('small');
-				container.removeClass('position');
-			}
-		},
-
-		afterResize: function(){
-
-			if($(window).width() < 768){
-				$('.logo').addClass('small');
-			}
-
-		},
-
-		afterLoad:function(){
-
-			if($(window).width() < 768){
-				$('.logo').addClass('small');
-			}
-		}
-	});
+		});
+	}
 
 	$('.nav__link').click(function(e){
 		e.preventDefault;

@@ -70,10 +70,13 @@ h3 { text-align: center; font-size: 18px; color: #f2ddc6; font-family: "Playfair
 .l .l-col1 { float: left; width: 20%; }
 .l .l-col2 { float: right; width: 70%; }
 
-.out { background: url(../img/horses.jpg) 0 bottom repeat-x; background-attachment: fixed; -moz-transition: all 0.8s ease; -o-transition: all 0.8s ease; -webkit-transition: all 0.8s ease; transition: all 0.8s ease; }
-.out.position { background-position: 0 114%; }
-@media only screen and (max-width: 768px) { .out { background-attachment: inherit; -moz-transition: all 0s; -o-transition: all 0s; -webkit-transition: all 0s; transition: all 0s; }
-  .out.position { background-position: center bottom; } }
+.bg-wrap { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+.bg-wrap .bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url(../img/horses.png) 50% bottom repeat-x; background-attachment: fixed; z-index: 1; -moz-transition: all 0.8s ease; -o-transition: all 0.8s ease; -webkit-transition: all 0.8s ease; transition: all 0.8s ease; }
+.bg-wrap .bg.position { background-position: 50% 114%; }
+@media only screen and (max-width: 768px) { .bg-wrap .bg { background-attachment: inherit; -moz-transition: all 0s; -o-transition: all 0s; -webkit-transition: all 0s; transition: all 0s; }
+  .bg-wrap .bg.position { background-position: center bottom; } }
+
+.fullpage { z-index: 3; }
 
 .header { position: fixed; width: 100%; top: 6%; z-index: 9; }
 .header__in { max-width: 1540px; margin: 0 auto; padding: 0 20px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; *zoom: 1; }
@@ -90,10 +93,11 @@ h3 { text-align: center; font-size: 18px; color: #f2ddc6; font-family: "Playfair
 .logo { -moz-transition: -moz-transform 0.8s ease; -o-transition: -o-transform 0.8s ease; -webkit-transition: -webkit-transform 0.8s ease; transition: transform 0.8s ease; }
 .logo.small { -moz-transform: scale(0.53) translateY(-125px) translateX(-50px); -ms-transform: scale(0.53) translateY(-125px) translateX(-50px); -webkit-transform: scale(0.53) translateY(-125px) translateX(-50px); transform: scale(0.53) translateY(-125px) translateX(-50px); }
 
-.more { position: relative; font-size: 11px; text-transform: uppercase; color: #f0e3d9; letter-spacing: 0.08em; font-family: "HelveticaNeueCyrBold", Helvetica, sans-serif; }
-.more:before { content: ""; position: absolute; top: 50px; left: 50%; margin-left: -31px; background: url('../img/icons-s6e82b23fd8.png') 0 -97px no-repeat; width: 62px; height: 118px; }
-.more span { position: relative; }
+.more { position: absolute; left: 0; right: 0; text-align: center; bottom: 28%; margin-left: -49px; font-size: 11px; text-transform: uppercase; color: #f0e3d9; letter-spacing: 0.08em; z-index: 0; font-family: "HelveticaNeueCyrBold", Helvetica, sans-serif; }
+.more:before { content: ""; position: absolute; top: -130px; left: 50%; margin-left: -31px; background: url('../img/icons-s6e82b23fd8.png') 0 -97px no-repeat; width: 62px; height: 118px; }
+.more span { position: relative; -moz-transition: opacity 0.9s ease; -o-transition: opacity 0.9s ease; -webkit-transition: opacity 0.9s ease; transition: opacity 0.9s ease; }
 .more span:after { content: ""; position: absolute; bottom: -155px; left: 50%; margin-left: -7px; background: url('../img/icons-s6e82b23fd8.png') 0 -298px no-repeat; width: 14px; height: 134px; }
+.more.is-hidden span { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
 
 .section { max-width: 1500px; margin: 0 auto; padding-top: 60px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .section__in { max-width: 1080px; margin: 0 auto; padding-top: 16.5%; }
