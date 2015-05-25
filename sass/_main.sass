@@ -1,15 +1,30 @@
 // Normally mainpage styles
-.out
-	background: url(../img/horses.jpg) 0 bottom repeat-x
-	background-attachment: fixed
-	+transition(all 0.8s ease)
-	&.position
-		background-position: 0 114%
-	+r(768)
-		background-attachment: inherit
-		+transition(all 0s)
+.bg-wrap
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	.bg
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: url(../img/horses.png) 50% bottom repeat-x
+		background-attachment: fixed
+		z-index: 1
+		+transition(all 0.8s ease)
 		&.position
-			background-position: center bottom
+			background-position: 50% 114%
+		+r(768)
+			background-attachment: inherit
+			+transition(all 0s)
+			&.position
+				background-position: center bottom
+
+.fullpage
+	z-index: 3
 
 .header
 	position: fixed
@@ -57,21 +72,28 @@
 		+transform(scale(0.53) translateY(-125px) translateX(-50px))
 
 .more
-	position: relative
+	position: absolute
+	left: 0
+	right: 0
+	text-align: center
+	bottom: 28%
+	margin-left: -49px
 	font-size: 11px
 	text-transform: uppercase
 	color: #F0E3D9
 	letter-spacing: 0.08em
+	z-index: 0
 	+hb
 	&:before
 		content: ""
 		position: absolute
-		top: 50px
+		top: -130px
 		left: 50%
 		margin-left: -31px
 		+s(curve1)
 	span
 		position: relative
+		+transition(opacity 0.9s ease)
 		&:after
 			content: ""
 			position: absolute
@@ -79,7 +101,9 @@
 			left: 50%
 			margin-left: -7px
 			+s(line1)
-
+	&.is-hidden
+		span
+			+opacity(0)
 
 .section
 	max-width: 1500px
