@@ -30,9 +30,9 @@
 								</span>
 							</button>
 						</div>
-						<a href="#all" class="header__link" data-menuanchor="all">Весь сайт</a>
+						<a href="#all" class="header__link js-link" data-menuanchor="all">Весь сайт</a>
 					</div>
-					<a href="#main" class="logo"><img src="img/logo.png" alt="logo"></a>
+					<a href="#top" class="logo"><img src="img/logo.png" alt="logo"></a>
 					<div class="header__bl onright">
 						<div class="button-wrap">
 							<button class="button button--line button--effect-1">
@@ -56,13 +56,13 @@
 				</div>
 			</header>
 			<!-- end header -->
-			<div class="section">
+			<div class="section large-pad no-bg">
 				<div class="section__in txt-center">
 					<h1 class='h1 max-width'>Твой следующий шаг на пути к здоровью и долголетию</h1>
 					<ul class="nav">
-						<li><a href="#products" class="nav__link">Продукты</a></li>
-						<li><a href="#blog" class="nav__link">Блог</a></li>
-						<li><a href="#about" class="nav__link">Компания</a></li>
+						<li><a href="#products" class="nav__link js-link">Продукты</a></li>
+						<li><a href="#blog" class="nav__link js-link">Блог</a></li>
+						<li><a href="#about" class="nav__link js-link">Компания</a></li>
 					</ul>
 					<p class="more"><span>Ниже больше</span></p>
 				</div>
@@ -109,7 +109,7 @@
 				</div>
 			</div>
 			<div class="section" id='blog'>
-				<div class="section__in small-pad">
+				<div class="section__in">
 					<h2 class="h2">Наш блог</h2>
 					<h3 class="h3">Свежие события</h3>
 					<div class="txt-center">
@@ -142,12 +142,12 @@
 								</div>
 							</div>
 						</div>
-						<div class="blog__btn"><a href="#" class="button is-orange">Весь блог</a></div>
+						<div class="blog__btn"><a href="1-0blog.html" class="button is-orange">Весь блог</a></div>
 					</div>
 				</div>
 			</div>
 			<div class="section" id='company'>
-				<div class="section__in small-pad">
+				<div class="section__in">
 					<h2 class="h2">Душевная компания</h2>
 					<h3 class="h3">Мы вкладываем душу во все, что делаем. По-другому не умеем</h3>
 					<div class="about">
@@ -171,7 +171,7 @@
 				</div>
 			</div>
 			<div class="section" id='about'>
-				<div class="section__in small-pad">
+				<div class="section__in">
 					<h2 class="h2">О компании</h2>
 					<h3 class="h3">История успеха</h3>
 					<div class="about">
@@ -193,16 +193,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="section" id='all'>
-				<div class="section__in small-pad">
+			<div class="section no-bg" id='all'>
+				<div class="section__in">
 					<h2 class="h2">Весь сайт</h2>
 					<h3 class="h3">Не теряйтесь</h3>
 					<div class="all">
 						<ul class="all__list">
-							<li data-menuanchor="main"><a href="#main">Авторские продукты</a></li>
-							<li data-menuanchor="products"><a href="#products">Продукты</a></li>
-							<li data-menuanchor="blog"><a href="#blog">Блог</a></li>
-							<li data-menuanchor="about"><a href="#about">Компания</a></li>
+							<li><a class="js-link" href="#main">Авторские продукты</a></li>
+							<li><a class="js-link" href="#products">Продукты</a></li>
+							<li><a class="js-link" href="#blog">Блог</a></li>
+							<li><a class="js-link" href="#about">Компания</a></li>
 						</ul>
 						<ul class="all__list">
 							<li><a href="#">Кобылье молоко и кумыс</a></li>
@@ -238,9 +238,7 @@
 			<!-- begin footer  -->
 			<footer class="footer is-main">
 				<div class="footer__in">
-					<p class="footer__copy">© 2014, «БелКумысПром»</p>
-					<p class="footer__made">Разработка сайта: <a href="#top">Flex Media</a></p>
-					<button class="button button--fill button--effect-1">
+					<button class="button button--fill button--effect-1 js-top">
 						<span class="morph-shape" data-morph-active="M286.5,62.5c0,27.891-22.609,50.5-50.5,50.5c0,0-64.355-6-86-6c-21.645,0-86,6-86,6c-27.891,0-50.5-22.609-50.5-50.5l0,0C13.5,34.609,36.109,12,64,12c0,0,64.355,6,86,6c21.645,0,86-6,86-6C263.891,12,286.5,34.609,286.5,62.5L286.5,62.5z">
 							<svg width="100%" height="100%" viewBox="0 0 300 125" preserveAspectRatio="none">
 								<path d="M286.5,62.5C286.5,90.39099999999999,263.891,113,236,113C236,113,171.64499999999998,113,150,113C128.355,113,64,113,64,113C36.109,113,13.5,90.39099999999999,13.5,62.5C13.5,62.5,13.5,62.5,13.5,62.5C13.5,34.609,36.109,12,64,12C64,12,128.35500000000002,12,150,12C171.645,12,236,12,236,12C263.891,12,286.5,34.609,286.5,62.5C286.5,62.5,286.5,62.5,286.5,62.5C286.5,62.5,286.5,62.5,286.5,62.5"></path>
@@ -248,6 +246,8 @@
 						</span>
 						<span class="button__text">Наверх</span>
 					</button>
+					<p class="footer__copy">© 2014, «БелКумысПром»</p>
+					<p class="footer__made">Разработка сайта: <a href="#">Flex Media</a></p>
 				</div>
 			</footer>
 			<!-- end footer -->
@@ -258,13 +258,13 @@
 	<!-- begin mobile-menu -->
 	<nav class="mob">
 		<div class="mob__in">
-			<a href="#" class="mob__logo"><img src="img/logo-small.png" alt=""></a>
+			<a href="#top" class="mob__logo"><img src="img/logo-small.png" alt=""></a>
 			<div class="mob__nav">
 				<a href="#" class="mob__link">Авторские продукты</a>
 				<ul class="mob__menu">
-					<li><a href="#products">Продукты</a></li>
-					<li><a href="#blog">Блог</a></li>
-					<li><a href="#company">Компания</a></li>
+					<li><a href="#products" class="js-link">Продукты</a></li>
+					<li><a href="#blog" class="js-link">Блог</a></li>
+					<li><a href="#company" class="js-link">Компания</a></li>
 				</ul>
 			</div>
 			<div class="mob__nav">

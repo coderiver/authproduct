@@ -13,21 +13,42 @@ head.ready(function() {
 	});
 
 	//scrollTo
-	$('.nav__link').click(function (i) {
-
-		i.preventDefault();
-
-		var page = $(this).attr("href");
+	function scrollTo(page){
 
 		$('html, body').animate({
 			scrollTop: $(page).offset().top
 		}, 800);
 
+	}
+
+	$('.js-link').click(function (e) {
+
+		e.preventDefault();
+		var page = $(this).attr("href");
+		scrollTo(page);
+
 	});
 
-	// $(window).scroll(function(){
+	$('.js-top').click(function(){
 
-	// });
+		$('html, body').animate({
+			scrollTop: 0,
+		}, 800);
+	});
+
+	$(window).scroll(function(){
+
+		var top = $(window).scrollTop();
+
+		if(top > 100){
+			$('.logo').addClass('small');
+			$('.bg').addClass('position');
+		} else{
+			$('.logo').removeClass('small');
+			$('.bg').removeClass('position');
+		}
+
+	});
 
 	$('.container').on('scroll touchmove mousewheel', function(e){
 
@@ -166,37 +187,38 @@ head.ready(function() {
 	 });
 
 	//validate
-	if($('.js-form').length > 0){
-		$(".js-form").validate({
-			rules: {
-				firstname: "required",
-				lastname: "required",
-				name: {
-					required: true,
-					minlength: 1
-				},
-				phone: {
-					required: true,
-					number: true
-					},
-				message: {
-					required: true,
-					minlength: 1
-				},
-				email: {
-					required: true,
-					email: true
-				},
-				agree: "required"
-			},
-		 	messages: {
-				required: {
-				required: "",
-				minlength: ""
-				}
-			}
-		});
-	}
+	var form_validate = $('.js-validate');
+
+		if (form_validate.length) {
+
+		form_validate.each(function () {
+
+			var form_this = $(this);
+			$.validate({
+				form : form_this,
+				validateOnBlur : false,
+				borderColorOnError : false,
+				scrollToTopOnError : false,
+
+			onSuccess : function() {
+				$('.js-form').addClass('is-success');
+				$('.js-form-back').addClass('is-success');
+		 		// ajaxSubmit(form_this);
+				return false;
+		   }
+	   	});
+
+	  	});
+
+	 };
+
+	$('.js-form-return').on('click', function(){
+
+	 	$('.js-validate').trigger('reset');
+	 	$('.js-form').removeClass('is-open is-success');
+		$('.js-form-back').removeClass('is-success');
+
+	 });
 
 	//popups
 	$('.js-popup-btn').on('click', function() {

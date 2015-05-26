@@ -8,22 +8,28 @@
 	background-image: url(../img/horses.png)
 	background-position: 50% bottom
 	background-repeat: repeat-x
-	z-index: 2
-	pointer-events: none
+	z-index: 1
 	+transition(all 0.8s ease)
 	&.position
 		+transform(translateY(100px))
 	+r(1280)
+		height: 150px
 		-webkit-background-size: contain
 		-o-background-size: contain
 		background-size: contain
+		&.position
+			+transform(translateY(50px))
+	+r(980)
+		&.position
+			+transform(none)
 
 
 .header
 	position: fixed
 	width: 100%
+	min-height: 100px
 	padding-top: 60px
-	z-index: 1
+	z-index: 10
 	&__in
 		max-width: 1540px
 		margin: 0 auto
@@ -49,8 +55,7 @@
 			color: $gray
 	+r(768)
 		top: 0
-		min-height: 100px
-		background: #fff
+		background: rgba(#fff, 0.7)
 		.header__bl
 			&:first-child
 				margin-top: 0
@@ -115,44 +120,60 @@
 		padding: 20px 0
 		background: #fff
 		+transition(opacity 0.5s ease)
+	+r(768)
+		margin-bottom: 0
+		&:before
+			margin-left: -15.5px
+			+s(small-curve)
 
 .container
 	.section
 		max-width: 1500px
 		margin: 0 auto
-		padding: 60px 25px 0
+		padding: 0 25px
 		+box
 		&:after
-			display: none
 			content: ""
 			position: absolute
 			left: 50%
-			bottom: -125px
-			margin-left: -15.5px
-			background: url(../img/icons/small-curve.png) no-repeat
-			width: 31px
+			bottom: -135px
+			margin-left: -31px
+			background: url(../img/icons/long-curve.png) no-repeat
+			width: 62px
 			height: 100px
+		&.no-bg
+			&:after
+				display: none
+		&.large-pad
+			.section__in
+				padding-top: 300px
 		&__in
 			max-width: 1080px
 			margin: 0 auto
 			padding-top: 170px
-			&.small-pad
-				padding-top: 105px
 		.nav
-			margin-top: 5%
+			margin-top: 55px
 		.more
 			padding-top: 170px
+			margin-bottom: 30px
 		+rwh(768, 685)
-			position: relative
 			&:after
-				display: block
-			&:first-child,
-			&:last-child
-				&:after
-					display: none
+				background: url(../img/icons/small-curve.png) no-repeat
+				width: 31px
+				margin-left: -15.5px
 			.more
 				display: block
 				padding-top: 125px
+		+r(1280)
+			&.large-pad
+				.section__in
+					padding-top: 250px
+			.nav
+				margin-top: 35px
+		+r(768)
+			&.large-pad
+				.section__in
+					padding-top: 170px
 
 
 //navigation
@@ -456,6 +477,7 @@
 		padding: 75px 25px 170px
 		//+opacity(0)
 		+transition(all 0.3s ease)
+		z-index: 15
 		p
 			color: $violet
 			a
@@ -465,6 +487,9 @@
 		&.is-visible
 			bottom: 20%
 			+opacity(1)
+		+r(768)
+			padding-bottom: 120px
+
 
 // mobile menu
 .mob
@@ -481,7 +506,7 @@
 	+transform(translate3d(-100%, 0, 0))
 	+tr(transform 500ms)
 	+r(360)
-		width: 270px
+		width: 250px
 	.mob__logo
 		display: block
 		margin-bottom: 40px
@@ -505,10 +530,13 @@
 				color: $peach
 				text-decoration: underline
 				+pf
+				&:hover
+					text-decoration: none
 	.mob__order
 		font-size: 18px
 		color: $violet
 		font-weight: bold
+		text-decoration: underline
 		+pf
 		&:hover
 			text-decoration: none
@@ -551,3 +579,8 @@
 			height: 2px
 			background: #fff
 			+rotate(-45)
+	+r(768)
+		span
+			display: none
+	+r(360)
+		left: 280px
