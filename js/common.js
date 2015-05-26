@@ -221,29 +221,64 @@ head.ready(function() {
 	 });
 
 	//popups
-	$('.js-popup-btn').on('click', function() {
+	// $('.js-popup-btn').on('click', function() {
 
-		$('.js-popup').addClass('is-active');
-		return false;
+	// 	$('.js-popup').addClass('is-active');
+	// 	return false;
 
-	 });
-	 $('.js-popup-close').on('click', function() {
+	//  });
+	//  $('.js-popup-close').on('click', function() {
 
-		$('.js-popup').removeClass('is-active');
-		return false;
+	// 	$('.js-popup').removeClass('is-active');
+	// 	return false;
 
-	 });
+	//  });
 
-	 $('.js-popup').each(function() {
+	//  $('.js-popup').each(function() {
 
-		$('body').on('click', function () {
-		 $('.js-popup').removeClass('is-active');
-		});
+	// 	$('body').on('click', function () {
+	// 	 $('.js-popup').removeClass('is-active');
+	// 	});
 
-		$('.popup__inner').on('click', function(event) {
-		 event.stopPropagation();
-		});
+	// 	$('.popup__inner').on('click', function(event) {
+	// 	 event.stopPropagation();
+	// 	});
 
-	 });
+	//  });
+
+	 // popups
+	 (function() {
+
+	 	$('.js-popup').on( 'click', function () {
+
+	 		var somedialog = $(this).data('dialog'),
+
+	 		somedialog = $('#' + somedialog);
+
+
+	 		var morphEl = somedialog.find( '.morph-shape' ),
+	 			morphElSvg = morphEl.find('svg');
+
+	 		var s = Snap( morphElSvg[0] ),
+	 		path = s.select( 'path' ),
+	 		steps = {
+	 			open : morphEl.attr( 'data-morph-open' ),
+	 			close : morphEl.attr( 'data-morph-close' )
+	 		},
+	 		dlg = new DialogFx( somedialog[0], {
+	 			onOpenDialog : function( instance ) {
+	 				// animate path
+	 				path.stop().animate( { 'path' : steps.open }, 400, mina.easeinout );
+	 			},
+	 			onCloseDialog : function( instance ) {
+	 				// animate path
+	 				path.stop().animate( { 'path' : steps.close }, 400, mina.easeinout );
+	 			}
+	 		} );
+
+	 		dlg.toggle();
+	 	});
+
+	 })();
 
 });

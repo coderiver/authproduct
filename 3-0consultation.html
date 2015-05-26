@@ -55,7 +55,7 @@
 				</div>
 			</header>
 			<!-- end header -->
-			
+
 			<div class="section is-blog">
 				<div class="section__in small-pad">
 					<h2 class="h2">Наш блог</h2>
@@ -65,13 +65,13 @@
 					<div class="consultation">
 						<div class="consultation__section">
 							<div class="consultation__number">+375 29 666 13 13</div>
-							<button class="button is-orange js-popup-btn">обратный звонок</button>
+							<button class="button is-orange js-popup" data-dialog="call">обратный звонок</button>
 							<div class="consultation__contacts">
 								<div class="is-orange">e-mail: <span>avtorskie@gmail.com</span></div>
 								<div>skype: <span>avtorskie</span></div>
 							</div>
-						</div>		
-						<div class="consultation__section">					
+						</div>
+						<div class="consultation__section">
 							<div class="in-title">Диетолог</div>
 							<div class="c-blockquote">
 								<div class="c-blockquote__img"><img src="img/girl.png" alt=""></div>
@@ -80,7 +80,7 @@
 									<span>Марина Владимировна, врач-диетолог</span>
 								</div>
 							</div>
-						</div>	
+						</div>
 						<div class="consultation__section is-last js-form">
 							<div class="form-wrap">
 								<div class="in-title">Форма обратной  связи</div>
@@ -116,19 +116,19 @@
 										</div>
 									</form>
 								</div>
-							</div>	
+							</div>
 							<div class="form-wrap is-hidden">
-								<div class="success">							
+								<div class="success">
 									<div class="in-title">Спасибо!</div>
 									<p>В ближайшее время с вами свяжется наш менеджер!</p>
 									<button class="btn-refresh js-form-return"></button>
 								</div>
-							</div>					
-						</div>				
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			
+
 			<!-- begin footer  -->
 			<footer class="footer">
 				<div class="footer__in">
@@ -140,7 +140,7 @@
 						</span>
 						<span class="button__text">Наверх</span>
 					</button>
-					<p class="footer__copy">© 2014, «БелКумысПром»</p>			
+					<p class="footer__copy">© 2014, «БелКумысПром»</p>
 					<p class="footer__made">Разработка сайта: <a href="#">Flex Media</a></p>
 				</div>
 			</footer>
@@ -150,8 +150,8 @@
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 	<!-- begin mobile-menu -->
 	<nav class="mob">
 		<div class="mob__in">
@@ -221,12 +221,48 @@
 			<i class="popup__close js-popup-close"></i>
 			<div class="popup__logo"><img src="img/logo.png" alt=""></div>
 			<div class="popup__success">
-				<div class="success">							
+				<div class="success">
 					<div class="in-title">Спасибо!</div>
 					<p>В ближайшее время с вами свяжется наш менеджер!</p>
 				</div>
 			</div>
-		</div>	
+		</div>
+	</div>
+</div>
+<div id="call" class="dialog">
+	<div class="dialog__overlay"></div>
+	<div class="dialog__content">
+		<div class="morph-shape" data-morph-open="M0,0h80c0,0,0,9.977,0,29.834c0,19.945,0,30.249,0,30.249H0c0,0,0-10.055,0-30.332C0,8.219,0,0,0,0z" data-morph-close="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042 C3.084,29.762,0,29.75,0,29.75z">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none">
+				<path d="M0,29.75C0,29.75,80,29.75,80,29.75C80,29.75,76.917,29.764,76.917,29.791C76.917,29.819,80,29.833000000000002,80,29.833000000000002C80,29.833000000000002,0,29.833000000000002,0,29.833000000000002C0,29.833000000000002,3.084,29.819000000000003,3.084,29.791C3.084,29.762,0,29.75,0,29.75C0,29.75,0,29.75,0,29.75"></path>
+			<desc>Created with Snap</desc><defs></defs></svg>
+		</div>
+		<div class="dialog-inner influence">
+			<button class="dialog-close" data-dialog-close="">Close</button>
+			<div class="influence__img">
+				<img src="img/endo-pict.png" alt="">
+			</div>
+			<div class="influence__in">
+				<article class="influence__article">
+					<div class="influence__title">Пищеварительная система</div>
+					<p>
+						Укрепляет кишечную микрофлору, стимулируя образование полезных бактерий в ней. Обладает бактерицидными свойствами в отношении патогенной микрофлоры. Улучшает пищеварение: нормализует секреторную деятельность желудка и поджелудочной железы, регулирует образование желчи. Повышает защитную функцию печени. Уменьшает процессы гниения и брожения в кишечнике.
+					</p>
+					<div class="influence__more">
+						<a href="#">Читать полностью в блоге</a>
+					</div>
+				</article>
+				<a href="#" class="video-link">
+					<div class="video-link__preview">
+						<img src="img/video-preview.jpg" alt="">
+					</div>
+					<div class="video-link__in">
+						<p>Видео о влиянии кумыса на пищеварительную систему</p>
+						<span class="video-link__duration">10:45</span>
+					</div>
+				</a>
+			</div>
+		</div>
 	</div>
 </div>
 <!-- load scripts -->
