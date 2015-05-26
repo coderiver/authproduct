@@ -4,6 +4,8 @@
 			top: 0
 			width: 100px
 			margin-left: -50px 
+			+r(768)
+				top: 15px
 			img
 				width: 100%
 
@@ -11,6 +13,8 @@
 	font-size: 0
 	text-align: center
 	padding: 25px 0 50px
+	+r(768)
+		padding: 25px 0 35px 
 	li
 		display: inline-block
 		vertical-align: top
@@ -72,6 +76,10 @@
 
 .section
 	&.is-blog
+		+r(768)
+			padding: 0
+		&:after
+			display: none
 		.blog__item
 			margin-bottom: 44px
 		.blog__in
@@ -81,6 +89,10 @@
 				
 .footer
 	padding: 180px 20px 45px
+	position: relative
+	z-index: 10 
+	+r(768)
+		padding: 20px 20px 20px 
 	&__in
 		+clr
 		text-align: center
@@ -92,38 +104,67 @@
 		letter-spacing: 0.03em 
 		padding: 10px 0 
 		color: #fff
+		+r(768)
+			color: #8b87a1 
+			padding: 5px 0 
 		a
 			color: #fff 
+			+r(768)
+				color: #8b87a1 
 	&__copy
 		float: left
 		text-align: left
+		+r(768)
+			float: none
+			text-align: center
 	&__made
 		float: right
 		text-align: right
+		+r(768)
+			float: none
+			text-align: center
 	.button
 		margin: 0 10px 
+		+r(768)
+			margin: 0 0 20px 
 
 .in-title
 	+pf
 	line-height: 1.25
 	color: #4c4369
-	font-size: 40px		
+	font-size: 40px
+	+r(768)
+		font-size: 24px
+		text-align: center
 .inner
 	max-width: 803px
 	padding: 0 20px 
 	margin: 0 auto
+	+r(768)
+		padding: 0 
 	p, .inner__box
 		padding: 0 10% 
+		+r(768)
+			padding: 0 25px 
+	&__box
+		+r(768)
+			text-align: center
+	.in-title
+		padding: 0 2% 25px 10% 
+		+r(768)
+			padding: 0 25px 25px
 	&__heading
 		+pf
 		line-height: 1.25
 		color: #4c4369
-	.in-title
-		padding: 0 2% 25px 10% 
-	&__heading
 		padding: 0 8% 0 10% 
 		font-size: 30px
 		margin-bottom: 45px
+		+r(768)
+			padding: 0 25px 
+			font-size: 20px
+			margin-bottom: 30px
+			text-align: center
 	img
 		max-width: 100%
 		margin-bottom: 30px
@@ -134,6 +175,8 @@
 		letter-spacing: 0.03em
 		color: #8e88a3 
 		margin-bottom: 30px
+		+r(768)
+			font-size: 14px
 		b
 			+hr
 			font-weight: normal
@@ -143,16 +186,26 @@
 		line-height: 1.5
 		color: #e8c29a
 		margin: 0 -10px 30px 0 
+		+r(768)
+			padding: 0 25px 
+			margin: 0 0 30px 
+			font-size: 18px
 	&__news
 		padding: 0 0 50px  
+		text-align: center
 		p
 			margin-bottom: 10px
 			padding: 0 9% 0 10% 
+			text-align: left
+			+r(768)
+				padding: 0 25px 
 		img
 			max-width: 300px
 			float: left
 			margin: 10px 35px 10px 0 
-
+			+r(768)
+				float: none
+				margin: 10px 0 30px  
 .back
 	display: inline-block
 	position: relative
@@ -181,6 +234,8 @@
 		top: 50%
 		margin-top: -11px
 		z-index: 200 
+		+r(1028)
+			display: none !important
 		&:before
 			display: none
 	.slick-prev
@@ -216,11 +271,15 @@
 	text-align: center
 	padding: 50px 0  
 	li
-		padding: 0 15px 
+		padding: 0 15px 15px
 		display: inline-block
 		vertical-align: middle
+		+r(480)
+			display: block
 	a
 		display: inline-block
+		img
+			margin: 0
 		
 
 .number
@@ -275,6 +334,8 @@
 	max-width: 1024px
 	padding: 0 20px 
 	margin: 0 auto
+	+r(768)
+		padding: 0 0 50px
 	&__tabs
 		font-size: 0
 		text-align: center
@@ -282,6 +343,8 @@
 			display: inline-block
 			vertical-align: top
 			padding: 0 5px 
+			+r(768)
+				padding: 0
 		a
 			+pf
 			font-size: 40px
@@ -289,6 +352,9 @@
 			color: #E8C29A
 			display: inline-block
 			padding: 3px 22px 8px
+			+r(768)
+				font-size: 26px
+				padding: 11px 22px 13px 
 			&.is-active
 				color: #4c4369
 				background-color: #F6F5F7
@@ -304,6 +370,11 @@
 		float: left
 		width: 200px
 		padding: 25px 0 0 
+		+r(768)
+			float: none
+			margin: 0 auto
+			text-align: center
+			padding: 5px 0 0  
 		li
 			padding: 0 15px 10px
 			a
@@ -329,19 +400,36 @@
 	&__img
 		max-width: 350px
 		width: 100%
-		float: left
-		img
-		width: 100%
+		float: left		
 		margin-right: 90px
+		img
+			width: 100%
+			+r(768)
+				max-width: 90%
+		+r(768)
+			float: none
+			margin: 0 auto
 	&__info
 		overflow: hidden
 		padding: 35px 0 0 
+		+r(1028)
+			clear: both
+			max-width: 380px
+		+r(768)
+			margin: 0 auto 
+			max-width: 100%
+			text-align: center
 		&.is-small
 			max-width: 240px
 		.spinner
 			float: left
+			+r(768)
+				float: none
+				margin-bottom: 20px
 		.price
 			float: right
+			+r(768)
+				float: none
 		p
 			+pfi
 			font-size: 15px
@@ -353,6 +441,9 @@
 		line-height: 1.4 
 		margin-bottom: 25px
 		display: block
+		+r(768)
+			max-width: 240px
+			margin: 0 auto 25px 
 	&__btn
 		clear: both
 		padding: 26px 0 0
@@ -361,6 +452,12 @@
 			width: 100%
 			text-align: center
 			margin-bottom: 30px
+			+r(768)
+				max-width: 260px
+		p
+			+r(768)
+				max-width: 200px
+				margin: 0 auto
 	&__price
 		+clr
 		padding: 0 0 28px 
@@ -422,8 +519,8 @@
 			
 
 .popup
-	padding: 75px 20px 20px
-	min-width: 280px 
+	padding: 65px 0 20px
+	min-width: 320px 
 	&-wrap
 		position: fixed
 		top: 0
@@ -448,7 +545,7 @@
 		background: #fff
 		+box-shadow(0 1px 182px #483D32) 
 		position: relative
-		padding: 90px 0 0 
+		padding: 90px 0 70px 
 	&__logo
 		position: absolute
 		top: -55px
@@ -464,12 +561,13 @@
 			width: 100px
 			display: block
 			margin: 0 auto
-	&__form
-		max-width: 298px
-		padding: 0 20px
-		margin: 0 auto  
-		position: relative
-		z-index: 2 
+.form
+	max-width: 298px
+	padding: 0 30px
+	margin: 0 auto  
+	position: relative
+	z-index: 2 
+	text-align: left
 	&__title
 		text-align: center
 		+pf
@@ -479,7 +577,7 @@
 		display: block
 		margin-bottom: 20px
 	&__bottom
-		padding: 8px 0 80px
+		padding: 8px 0 10px
 		text-align: center
 		.button
 			width: 100%
@@ -532,3 +630,117 @@
 label.error
 	font-size: 0
 	+opacity(0)
+.section
+	z-index: 5
+	position: relative 
+.out
+	&.is-inner
+		position: relative
+		.bg-wrap
+			z-index: 0
+		.bg
+			background-attachment: inherit 
+			
+.consultation
+	max-width: 960px
+	text-align: center
+	margin: 0 auto
+	.in-title
+		max-width: 340px
+		margin: 0 auto 40px
+		+r(768)
+			max-width: 70%
+			margin: 0 auto 30px 
+	&__section
+		padding-bottom: 240px
+		margin-bottom: 40px
+		position: relative
+		+r(768)
+			padding-bottom: 130px 
+		&:after
+			content: "" 
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			height: 200px
+			background: url(../img/icons/consultation-deco.png) no-repeat bottom center  
+			-webkit-background-size: contain 
+			-o-background-size: contain 
+			background-size: contain 
+			+r(768)
+				height: 100px 
+		&.is-last
+			padding: 0
+			+r(768)
+				padding-bottom: 0 
+			&:after
+				display: none
+	&__number
+		+pf
+		font-size: 80px
+		letter-spacing: 0.05em 
+		color: #4c4369
+		display: block 
+		margin-bottom: 25px
+		+r(768)
+			font-size: 32px
+			margin-bottom: 30px
+	&__contacts
+		padding: 30px 0 
+		+r(768)
+			padding: 20px 0 0 
+		div
+			+pfi
+			font-size: 30px
+			line-height: 1.5
+			color: #8e88a3 
+			+r(768)
+				font-size: 18px
+				line-height: 2
+			&.is-orange
+				color: #e8c29a 
+				span
+					border-bottom-color: #e8c29a 
+		span
+			border-bottom: 1px solid #8e88a3
+
+.blockquote
+	text-align: left
+	+clr
+	max-width: 840px
+	margin: 0 auto
+	&__img
+		float: left
+		width: 154px
+		height: 154px
+		margin-right: 70px
+		+r(768)
+			float: none
+			margin: 0 auto 25px
+		img
+			width: 100%
+			height: 100%
+	&__text
+		overflow: hidden
+		padding: 5px 0  
+		+r(768)
+			padding: 0 20px
+			max-width: 300px
+			margin: 0 auto 
+		p
+			+pfi
+			font-size: 18px
+			line-height: 1.66
+			color: #8e88a3
+			margin-bottom: 25px
+		span
+			+hr
+			font-size: 11px
+			line-height: 1.8
+			color: #c2bfcd
+			letter-spacing: 0.02em  
+			+opacity(0.5)
+			max-width: 170px
+			display: block
+			text-transform: uppercase
