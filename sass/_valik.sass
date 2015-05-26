@@ -4,7 +4,7 @@
 			width: 100px
 			margin-left: -50px 
 			+r(768)
-				top: 15px
+				top: 25px
 			img
 				width: 100%
 
@@ -518,8 +518,6 @@
 			
 
 .popup
-	padding: 65px 0 20px
-	min-width: 320px 
 	&-wrap
 		position: fixed
 		top: 0
@@ -539,11 +537,6 @@
 		right: 17px
 		cursor: pointer
 	&__inner
-		max-width: 465px
-		margin: 0 auto
-		background: #fff
-		+box-shadow(0 1px 182px #483D32) 
-		position: relative
 		padding: 90px 0 70px 
 	&__success
 		position: relative
@@ -596,6 +589,7 @@
 	margin-bottom: 15px
 	label
 		display: block
+		+transition(all 0.3s)
 	span
 		+opacity(0.5)
 		+hr
@@ -617,19 +611,17 @@
 	font-size: 11px
 	letter-spacing: 0.1em 
 	color: #89859a
-	border: 1px solid #a19dae
+	border: 1px solid #e0dfe6
 	background: #fff
 	padding: 13px
 	width: 100%
 	+box
-	+opacity(0.5)
 	+transition(all 0.3s)
-	&:focus, &:hover
-		+opacity(1)
+	&:hover, &:focus
+		border-color: #a19dae 
 	&.error
 		color: #FF4141
-		border-color: #ff1212 
-		+opacity(0.8)
+		border-color: #ff4141 
 .textarea
 	height: 68px
 	resize: none
