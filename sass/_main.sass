@@ -1,67 +1,29 @@
 // Normally mainpage styles
-.bg-wrap
-	position: absolute
-	top: 0
+.bg
+	position: fixed
 	left: 0
 	right: 0
 	bottom: 0
-	.bg
-		position: absolute
-		top: 0
-		left: 0
-		right: 0
-		bottom: 0
-		background-image: url(../img/horses.png)
-		background-position: 50% bottom
-		background-repeat: repeat-x
-		background-attachment: fixed
-		z-index: 1
-		+transition(all 0.8s ease)
-		&.position
-			background-position: 50% 114%
-		+r(1028)
-			-webkit-background-size: contain
-			-o-background-size: contain
-			background-size: contain
-		+rwh(768, 685)
-			position: static
-			height: 291px
-			background-attachment: inherit
-			+transition(all 0s ease)
-			&.position
-				background-position: center bottom
-	.more
-		display: block
-		position: absolute
-		left: 0
-		right: 0
-		bottom: 28%
-		&:before
-			top: -130px
-			margin-left: -31px
-			+s(long-curve)
-		span
-			padding: 25px 0
+	height: 291px
+	background-image: url(../img/horses.png)
+	background-position: 50% bottom
+	background-repeat: repeat-x
+	z-index: 2
+	pointer-events: none
+	+transition(all 0.8s ease)
+	&.position
+		+transform(translateY(100px))
 	+r(1280)
-		.more
-			&:before
-				top: 52px
-				left: 50%
-				margin-left: -15.5px
-				+s(small-curve)
-	+rwh(768, 685)
-		position: static
-		.more
-			display: none
+		-webkit-background-size: contain
+		-o-background-size: contain
+		background-size: contain
 
-.fullpage
-	z-index: 3
 
 .header
 	position: fixed
 	width: 100%
-	top: 6%
-	z-index: 9
+	padding-top: 60px
+	z-index: 1
 	&__in
 		max-width: 1540px
 		margin: 0 auto
@@ -98,10 +60,12 @@
 			display: none
 		.logo
 			top: 50px
+			width: 100px
+			margin-left: -50px
 
 .logo
 	position: absolute
-	top: 25px
+	top: 60px
 	left: 50%
 	margin-left: -81px
 	img
@@ -119,18 +83,17 @@
 	&.small
 		img
 			+opacity(0)
-			+transform(scale(0.53) translateY(-50px))
+			+transform(scale(0.2) translateY(-100%))
 		&:before
 			+opacity(1)
 	+rwh(768, 685)
 		img
 			+opacity(0)
-			+transform(scale(0.53) translateY(-50px))
+			+transform(scale(0.2) translateY(-100%))
 		&:before
 			+opacity(1)
 
 .more
-	display: none
 	position: relative
 	text-align: center
 	font-size: 11px
@@ -145,63 +108,51 @@
 		position: absolute
 		top: 52px
 		left: 50%
-		margin-left: -15.5px
-		+s(small-curve)
+		margin-left: -31px
+		+s(long-curve)
 	span
 		position: relative
 		padding: 20px 0
 		background: #fff
 		+transition(opacity 0.5s ease)
-	&.is-hidden
-		bottom: 6%
-		span
-			+opacity(0)
-	&.is-none
-		+opacity(0)
 
-.section
-	max-width: 1500px
-	margin: 0 auto
-	padding-top: 60px
-	+box
-	&:after
-		display: none
-		content: ""
-		position: absolute
-		left: 50%
-		bottom: -125px
-		margin-left: -15.5px
-		background: url(../img/icons/small-curve.png) no-repeat
-		width: 31px
-		height: 100px
-	&__in
-		max-width: 1080px
+.container
+	.section
+		max-width: 1500px
 		margin: 0 auto
-		padding-top: 16.5%
-		&.small-pad
-			padding-top: 105px
-	.nav
-		margin-top: 5%
-	.more
-		padding-top: 17%
-	+r(768)
-		padding: 0 25px
-		&:first-child
-			.section__in
-				padding-top: 170px
-		.section__in
-			padding-top: 150px
-	+rwh(768, 685)
-		position: relative
+		padding: 60px 25px 0
+		+box
 		&:after
-			display: block
-		&:first-child,
-		&:last-child
-			&:after
-				display: none
+			display: none
+			content: ""
+			position: absolute
+			left: 50%
+			bottom: -125px
+			margin-left: -15.5px
+			background: url(../img/icons/small-curve.png) no-repeat
+			width: 31px
+			height: 100px
+		&__in
+			max-width: 1080px
+			margin: 0 auto
+			padding-top: 170px
+			&.small-pad
+				padding-top: 105px
+		.nav
+			margin-top: 5%
 		.more
-			display: block
-			padding-top: 125px
+			padding-top: 170px
+		+rwh(768, 685)
+			position: relative
+			&:after
+				display: block
+			&:first-child,
+			&:last-child
+				&:after
+					display: none
+			.more
+				display: block
+				padding-top: 125px
 
 
 //navigation
@@ -374,7 +325,6 @@
 			.slick-next
 				right: -10px
 
-
 //about
 .about
 	&__ttl
@@ -398,6 +348,9 @@
 			height: 339px
 			background: url(../img/history.png) 0 0 no-repeat
 			z-index: -1
+		&.no-bg
+			&:before
+				display: none
 	&__txt
 		width: 50%
 		max-width: 450px
@@ -430,6 +383,36 @@
 			margin: 0 auto
 			padding-right: 0
 			text-align: center
+
+//blockquote
+.blockquote
+	position: relative
+	max-width: 925px
+	min-height: 150px
+	margin: 30px auto 25px
+	padding: 55px 35px
+	background: url(../img/quote.png)
+	-webkit-background-size: 100% 100%
+	-o-background-size: 100% 100%
+	background-size: 100% 100%
+	background-repeat: no-repeat
+	text-align: center
+	font-size: 20px
+	font-style: italic
+	color: $violet
+	+box
+	+pf
+	strong
+		font-weight: bold
+	&:before
+		content: ""
+		position: absolute
+		top: -10px
+		left: 50%
+		+transform(translateX(-50%))
+		+s(horse)
+	+r(768)
+		font-size: 15px
 
 //all
 .all
@@ -469,14 +452,9 @@
 
 //footer
 .footer
-	&.is-fixed
-		position: fixed
-		left: 0
-		right: 0
-		bottom: 15%
-		padding: 0 20px
-		z-index: 9
-		+opacity(0)
+	&.is-main
+		padding: 75px 25px 170px
+		//+opacity(0)
 		+transition(all 0.3s ease)
 		p
 			color: $violet
@@ -487,3 +465,89 @@
 		&.is-visible
 			bottom: 20%
 			+opacity(1)
+
+// mobile menu
+.mob
+	position: fixed
+	top: 0
+	left: 0
+	width: 320px
+	height: 100%
+	padding: 40px 0
+	background: #fff
+	overflow-y: auto
+	text-align: center
+	z-index: 100
+	+transform(translate3d(-100%, 0, 0))
+	+tr(transform 500ms)
+	+r(360)
+		width: 270px
+	.mob__logo
+		display: block
+		margin-bottom: 40px
+	.mob__nav
+		position: relative
+		margin-bottom: 30px
+	.mob__link
+		display: inline-block
+		margin-bottom: 10px
+		font-size: 18px
+		color: $violet
+		text-decoration: none
+		+pf
+		&:hover, &.is-active
+			text-decoration: none
+	.mob__menu
+		li
+			margin-bottom: 10px
+			a
+				font-size: 18px
+				color: $peach
+				text-decoration: underline
+				+pf
+	.mob__order
+		font-size: 18px
+		color: $violet
+		font-weight: bold
+		+pf
+		&:hover
+			text-decoration: none
+
+.mob-close
+	position: fixed
+	top: 60px
+	left: 340px
+	font-size: 0
+	cursor: pointer
+	visibility: hidden
+	z-index: 100
+	+transform(translate3d(-320px, 0, 0))
+	+tr(transform 500ms)
+	span
+		display: inline-block
+		vertical-align: middle
+		font-size: 11px
+		color: #fff
+		letter-spacing: 1px
+		text-transform: uppercase
+	i
+		position: relative
+		margin-right: 40px
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 35px
+			height: 2px
+			background: #fff
+			+rotate(45)
+		&:after
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 35px
+			height: 2px
+			background: #fff
+			+rotate(-45)
