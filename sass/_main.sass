@@ -27,9 +27,11 @@
 .header
 	position: fixed
 	width: 100%
-	min-height: 100px
+	top: -200px
+	min-height: 110px
 	padding-top: 60px
 	z-index: 10
+	+transition(top 0.6s ease)
 	&__in
 		max-width: 1540px
 		margin: 0 auto
@@ -53,6 +55,8 @@
 		+hb
 		&:hover
 			color: $gray
+	&.is-visible
+		top: 0
 	+r(768)
 		top: 0
 		padding-top: 0
@@ -65,7 +69,7 @@
 		.header__link
 			display: none
 		.logo
-			top: 50px
+			top: 25px
 			width: 100px
 			margin-left: -50px
 
@@ -146,8 +150,6 @@
 			&:after
 				display: none
 		&.large-pad
-			+opacity(1)
-			+transition(opacity 0.5s ease 0.5s)
 			.section__in
 				padding-top: 300px
 		&__in
@@ -435,8 +437,14 @@
 		left: 50%
 		+transform(translateX(-50%))
 		+s(horse)
+		background-color: #FFF
 	+r(768)
 		font-size: 15px
+		&:before
+			+transform(scale(0.8) translateX(-50%))
+	+r(360)
+		&:before
+			display: none
 
 //all
 .all
@@ -478,8 +486,6 @@
 .footer
 	&.is-main
 		padding: 75px 25px 170px
-		//+opacity(0)
-		+transition(all 0.3s ease)
 		z-index: 15
 		p
 			color: $violet
@@ -487,9 +493,6 @@
 				color: $violet
 				&:hover
 					text-decoration: underline
-		&.is-visible
-			bottom: 20%
-			+opacity(1)
 		+r(768)
 			padding-bottom: 120px
 
@@ -589,7 +592,16 @@
 		left: 280px
 
 .js-fade
+	+opacity(0)
 	+transition(opacity 1s ease)
-
-.js-fade-delay
-	+transition(opacity 1.2s ease)
+	&.is-visible
+		+opacity(1)
+		.js-fade-delay-1,
+		.js-fade-delay-2
+			+opacity(1)
+	.js-fade-delay-1
+		+opacity(0)
+		+transition(opacity 1.2s ease 0.2s)
+	.js-fade-delay-2
+		+opacity(0)
+		+transition(opacity 1.2s ease 0.4s)

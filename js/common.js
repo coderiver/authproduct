@@ -42,10 +42,10 @@ head.ready(function() {
 
 		if(top > 100){
 			$('.logo').addClass('small');
-			$('.bg').addClass('position');
+			$('.js-bg').addClass('position');
 		} else{
 			$('.logo').removeClass('small');
-			$('.bg').removeClass('position');
+			$('.js-bg').removeClass('position');
 		}
 
 	});
@@ -253,90 +253,41 @@ head.ready(function() {
 	 		dlg.toggle();
 	 	});
 
+	 	$('.dialog__overlay').click(function(){
+	 		$('.js-form-back').removeClass('is-success');
+	 		$('.js-form').removeClass('is-success');
+	 	});
+
 	 })();
 
 
 	//fade
-	(function(){
+	function visibility(){
+		var window_top = $(window).scrollTop();
+		var window_height = $(window).height();
+		var start_visibility = window_top + window_height;
 
-	 	var fadeElement = $('.js-fade');
+		$(".js-fade").each(function(){
 
-	 	if ( fadeElement.length && $(window).width() > 1280 && $(window).scrollTop() === 0) {
-	 		var  scrollPosition;
+			var block_position = $(this).offset().top;
+
+			if(start_visibility >= block_position){
+				$(this).addClass('is-visible');
+			}
+		});
+	}
+
+	$(window).scroll(function(){
+		visibility();
+	});
+
+	$(window).load(function(){
+
+		visibility();
+		$('.header').addClass('is-visible');
+
+	});
 
 
-	 		$(window).on('scroll', function() {
-	 			scrollPosition = $(window).scrollTop() + $(window).height();
-	 		});
-
-
-	 		var calcShowPoint = function(element) {
-	 			return element.offset().top + 200;
-	 		};
-
-	 		fadeElement.each(function() {
-	 			var el          = $(this),
-	 				elShowPoint = calcShowPoint(el),
-	 				fadeDelay   = el.find('.js-fade-delay');
-
-	 			//hide elements
-	 			el.css({
-	 				opacity : '0'
-	 			});
-
-	 			if ( fadeDelay.length ) {
-	 				var delayStep = 500;
-
-	 				fadeDelay.each(function(index) {
-	 					$(this).css({
-	 						opacity               : '0',
-	 						webkitTransitionDelay : delayStep * index / 1000 + 's',
-	 						transitionDelay       : delayStep * index / 1000 + 's'
-	 					});
-	 				});
-	 			}
-
-	 			function showElWithDelay() {
-	 				fadeDelay.each(function() {
-	 					$(this).css({
-	 						opacity               : ''
-	 					});
-	 				});
-	 				setTimeout(function() {
-	 					fadeDelay.each(function() {
-	 						$(this).css({
-	 							webkitTransitionDelay : '',
-	 							transitionDelay       : ''
-	 						});
-	 					});
-	 				}, delayStep * fadeDelay.length);
-	 			}
-
-	 			function showEl() {
-	 			   if ( scrollPosition >= elShowPoint ) {
-	 					el.css({
-	 						opacity : ''
-	 					});
-
-	 					if ( fadeDelay.length ) {
-	 						showElWithDelay();
-	 					}
-	 				}
-	 			}
-
-	 			showEl();
-
-	 			$(window).on('scroll', function() {
-	 				showEl();
-	 			});
-
-	 			$(window).on('resize', function() {
-	 				elShowPoint = calcShowPoint(el);
-	 			});
-	 		});
-
-	 	}
-
-	 })();
 
 });
