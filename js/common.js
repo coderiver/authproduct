@@ -1,85 +1,42 @@
 head.ready(function() {
 
-	// function scrollFixedElements() {
-	//		 var scroll_left = $(this).scrollLeft();
-	//		 $(".fixed-element").css({
-	//				 left: -scroll_left
-	//		 });
-	// }
-	// scrollFixedElements();
-	// $(window).scroll(function(){
-	//		 scrollFixedElements()
-	// });
+	// mobile menu
+	$('.container, .js-mob-close').on('click', function(){
+		$('.out').removeClass('open-menu');
+		$('.bg').removeClass('is-hidden');
 
-	//fullpage
-	if ($('.fullpage').length > 0 && $(window).width() > 768 && $(window).height() > 685){
-		function fullPage(){
-			$('.fullpage').fullpage({
-				scrollingSpeed: 800,
-				verticalCentered: false,
-				fixedElements: '.header, .footer',
-				anchors: ['main', 'products', 'blog', 'about', 'all'],
+	});
+	$('#hamburger').on('click', function(event){
+		$('.out').addClass('open-menu');
+		$('.bg').addClass('is-hidden');
+		event.stopPropagation();
+	});
 
+	//scrollTo
+	$('.nav__link').click(function (i) {
 
-				onLeave: function(index, nextIndex, direction){
-					var logo 		= $('.logo'),
-						container	= $('.bg'),
-						more 		= $('.more'),
-						footer		= $('.footer');
+		i.preventDefault();
 
-					if(index == 1 && direction == 'down'){
-						logo.addClass('small');
-						container.addClass('position');
-						more.addClass('is-hidden');
-					}
+		var page = $(this).attr("href");
 
-					else if(index !== 1 && nextIndex == 1 && direction == 'up'){
-						logo.removeClass('small');
-						container.removeClass('position');
-						more.removeClass('is-hidden');
-					}
-
-					else if(index == 4 && direction == 'down'){
-						footer.addClass('is-visible');
-						more.addClass('is-none');
-					}
-
-					else if(index == 5 && direction == 'up'){
-						footer.removeClass('is-visible');
-						more.removeClass('is-none');
-					}
-
-				},
-
-				afterLoad: function(anchorLink, index){
-					var more 	= $('.more'),
-						footer	= $('.footer');
-
-					if(anchorLink == 'all'){
-						footer.addClass('is-visible');
-						more.addClass('is-none');
-					}
-				}
-
-			});
-		}
-
-		fullPage();
-	}
-
-	$(window).resize(function(){
-
-		if($(window).width() < 768 || $(window).height() < 685){
-			$.fn.fullpage.destroy('all');
-		} else {
-			fullPage();
-			// $.fn.fullpage.reBuild();
-		}
+		$('html, body').animate({
+			scrollTop: $(page).offset().top
+		}, 800);
 
 	});
 
-	$('.nav__link').click(function(e){
-		e.preventDefault;
+	// $(window).scroll(function(){
+
+	// });
+
+	$('.container').on('scroll touchmove mousewheel', function(e){
+
+	  if ($('.out').hasClass('open-menu')) {
+		e.preventDefault();
+		e.stopPropagation();
+		return false;
+	  }
+
 	});
 
 	//slick slider
