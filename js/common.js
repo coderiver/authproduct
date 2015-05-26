@@ -220,34 +220,8 @@ head.ready(function() {
 
 	 });
 
-	//popups
-	// $('.js-popup-btn').on('click', function() {
-
-	// 	$('.js-popup').addClass('is-active');
-	// 	return false;
-
-	//  });
-	//  $('.js-popup-close').on('click', function() {
-
-	// 	$('.js-popup').removeClass('is-active');
-	// 	return false;
-
-	//  });
-
-	//  $('.js-popup').each(function() {
-
-	// 	$('body').on('click', function () {
-	// 	 $('.js-popup').removeClass('is-active');
-	// 	});
-
-	// 	$('.popup__inner').on('click', function(event) {
-	// 	 event.stopPropagation();
-	// 	});
-
-	//  });
-
 	 // popups
-	 (function() {
+	(function() {
 
 	 	$('.js-popup').on( 'click', function () {
 
@@ -278,6 +252,90 @@ head.ready(function() {
 
 	 		dlg.toggle();
 	 	});
+
+	 })();
+
+
+	//fade
+	(function(){
+
+	 	var fadeElement = $('.js-fade');
+
+	 	if ( fadeElement.length && $(window).width() > 1280 && $(window).scrollTop() === 0) {
+	 		var  scrollPosition;
+
+
+	 		$(window).on('scroll', function() {
+	 			scrollPosition = $(window).scrollTop() + $(window).height();
+	 		});
+
+
+	 		var calcShowPoint = function(element) {
+	 			return element.offset().top + 200;
+	 		};
+
+	 		fadeElement.each(function() {
+	 			var el          = $(this),
+	 				elShowPoint = calcShowPoint(el),
+	 				fadeDelay   = el.find('.js-fade-delay');
+
+	 			//hide elements
+	 			el.css({
+	 				opacity : '0'
+	 			});
+
+	 			if ( fadeDelay.length ) {
+	 				var delayStep = 500;
+
+	 				fadeDelay.each(function(index) {
+	 					$(this).css({
+	 						opacity               : '0',
+	 						webkitTransitionDelay : delayStep * index / 1000 + 's',
+	 						transitionDelay       : delayStep * index / 1000 + 's'
+	 					});
+	 				});
+	 			}
+
+	 			function showElWithDelay() {
+	 				fadeDelay.each(function() {
+	 					$(this).css({
+	 						opacity               : ''
+	 					});
+	 				});
+	 				setTimeout(function() {
+	 					fadeDelay.each(function() {
+	 						$(this).css({
+	 							webkitTransitionDelay : '',
+	 							transitionDelay       : ''
+	 						});
+	 					});
+	 				}, delayStep * fadeDelay.length);
+	 			}
+
+	 			function showEl() {
+	 			   if ( scrollPosition >= elShowPoint ) {
+	 					el.css({
+	 						opacity : ''
+	 					});
+
+	 					if ( fadeDelay.length ) {
+	 						showElWithDelay();
+	 					}
+	 				}
+	 			}
+
+	 			showEl();
+
+	 			$(window).on('scroll', function() {
+	 				showEl();
+	 			});
+
+	 			$(window).on('resize', function() {
+	 				elShowPoint = calcShowPoint(el);
+	 			});
+	 		});
+
+	 	}
 
 	 })();
 

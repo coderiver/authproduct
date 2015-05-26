@@ -183,6 +183,7 @@ h1, h2, h3, h4, h5, h6, strong { font-weight: normal; }
 .container .section { max-width: 1500px; margin: 0 auto; padding: 0 25px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .container .section:after { content: ""; position: absolute; left: 50%; bottom: -135px; margin-left: -31px; background: url(../img/icons/long-curve.png) no-repeat; width: 62px; height: 100px; }
 .container .section.no-bg:after { display: none; }
+.container .section.large-pad { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; -moz-transition: opacity 0.5s ease 0.5s; -o-transition: opacity 0.5s ease 0.5s; -webkit-transition: opacity 0.5s ease; -webkit-transition-delay: 0.5s; transition: opacity 0.5s ease 0.5s; }
 .container .section.large-pad .section__in { padding-top: 300px; }
 .container .section__in { max-width: 1080px; margin: 0 auto; padding-top: 170px; }
 .container .section .nav { margin-top: 55px; }
@@ -296,6 +297,10 @@ h1, h2, h3, h4, h5, h6, strong { font-weight: normal; }
 .mob-close i:after { content: ""; position: absolute; top: 0; left: 0; width: 35px; height: 2px; background: white; -ms-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
 @media only screen and (max-width: 768px) { .mob-close span { display: none; } }
 @media only screen and (max-width: 360px) { .mob-close { left: 280px; } }
+
+.js-fade { -moz-transition: opacity 1s ease; -o-transition: opacity 1s ease; -webkit-transition: opacity 1s ease; transition: opacity 1s ease; }
+
+.js-fade-delay { -moz-transition: opacity 1.2s ease; -o-transition: opacity 1.2s ease; -webkit-transition: opacity 1.2s ease; transition: opacity 1.2s ease; }
 
 .slick-slider { position: relative; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
 
