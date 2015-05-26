@@ -146,6 +146,8 @@
 			&:after
 				display: none
 		&.large-pad
+			+opacity(1)
+			+transition(opacity 0.5s ease 0.5s)
 			.section__in
 				padding-top: 300px
 		&__in
@@ -585,3 +587,9 @@
 			display: none
 	+r(360)
 		left: 280px
+
+.js-fade
+	+transition(opacity 1s ease)
+
+.js-fade-delay
+	+transition(opacity 1.2s ease)
