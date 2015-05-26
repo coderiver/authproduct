@@ -1,7 +1,6 @@
 .header
 	.logo
 		&_inner
-			top: 0
 			width: 100px
 			margin-left: -50px 
 			+r(768)
@@ -92,7 +91,7 @@
 	position: relative
 	z-index: 10 
 	+r(768)
-		padding: 20px 20px 20px 
+		padding: 20px 20px 140px 
 	&__in
 		+clr
 		text-align: center
@@ -546,6 +545,11 @@
 		+box-shadow(0 1px 182px #483D32) 
 		position: relative
 		padding: 90px 0 70px 
+	&__success
+		position: relative
+		z-index: 2
+		max-width: 330px
+		margin: 0 auto 
 	&__logo
 		position: absolute
 		top: -55px
@@ -605,6 +609,8 @@
 			+pfi
 			font-size: 14px
 			color: #E8C29A
+	.help-block
+		display: none
 
 .input, .textarea
 	+hr
@@ -705,7 +711,7 @@ label.error
 		span
 			border-bottom: 1px solid #8e88a3
 
-.blockquote
+.c-blockquote
 	text-align: left
 	+clr
 	max-width: 840px
@@ -744,4 +750,44 @@ label.error
 			max-width: 170px
 			display: block
 			text-transform: uppercase
-			
+
+.js-form-back
+	&.is-success
+		.form-wrap
+			display: none
+			&.is-hidden
+				display: block
+	.form-wrap
+		&.is-hidden
+			display: none
+.js-form
+	&.is-success
+		.form-wrap
+			display: none
+			&.is-hidden
+				display: block
+	.form-wrap
+		&.is-hidden
+			display: none
+	
+.success
+	text-align: center
+	max-width: 350px
+	margin: 0 auto
+	.in-title
+		margin-bottom: 20px
+	p
+		+pfi
+		font-size: 18px
+		line-height: 1.66
+		color: #89859a 
+		margin-bottom: 30px
+.btn-refresh
+	+s(refresh)
+	display: inline-block
+	vertical-align: top
+	
+.bg-wrap
+	&.is-inner
+		.bg
+			position: absolute

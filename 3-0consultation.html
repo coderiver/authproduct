@@ -12,136 +12,223 @@
 <body>
 <!-- BEGIN  out-->
 <div class="out is-inner">
-	<!-- begin header  -->
-	<header class="header">
-		<div class="header__in">
-			<div class="header__bl onleft">
-				<a class="header__menu" href="#">
-					<button id="hamburger" class="menu-button">
-						<span id="morph-shape" class="morph-shape" data-morph-open="M3,20c0,0,12-4,27-4s27,4,27,4;M3,60c0,0,12,4,27,4s27-4,27-4" data-morph-close="M3,20c0,0,12,4,27,4s27-4,27-4;M3,60c0,0,12-4,27-4s27,4,27,4">
-							<svg width="100%" height="100%" viewBox="0 0 60 80" preserveAspectRatio="none">
-								<path d="M3,20c0,0,12,0,27,0s27,0,27,0" fill="none"/>
-								<line x1="3" y1="40" x2="57" y2="40"/>
-								<path d="M3,60c0,0,12,0,27,0s27,0,27,0" fill="none"/>
-							</svg>
-						</span>
-					</button>
-				</a>
-				<a href="#all" class="header__link" data-menuanchor="all">Весь сайт</a>
+	<div class="container">
+		<div class="main">
+			<!-- begin header  -->
+			<header class="header">
+				<div class="header__in">
+					<div class="header__bl onleft">
+						<div class="header__menu">
+							<button id="hamburger" class="menu-button">
+								<span id="morph-shape" class="morph-shape" data-morph-open="M3,20c0,0,12-4,27-4s27,4,27,4;M3,60c0,0,12,4,27,4s27-4,27-4" data-morph-close="M3,20c0,0,12,4,27,4s27-4,27-4;M3,60c0,0,12-4,27-4s27,4,27,4">
+									<svg width="100%" height="100%" viewBox="0 0 60 80" preserveAspectRatio="none">
+										<path d="M3,20c0,0,12,0,27,0s27,0,27,0" fill="none"/>
+										<line x1="3" y1="40" x2="57" y2="40"/>
+										<path d="M3,60c0,0,12,0,27,0s27,0,27,0" fill="none"/>
+									</svg>
+								</span>
+							</button>
+						</div>
+						<a href="#all" class="header__link" data-menuanchor="all">Весь сайт</a>
+					</div>
+					<a href="#main" class="logo logo_inner"><img src="img/logo.png" alt="logo"></a>
+					<div class="header__bl onright">
+						<div class="button-wrap">
+							<button class="button button--line button--effect-1">
+								<span class="morph-shape" data-morph-active="M286.5,62.5c0,27.891-22.609,50.5-50.5,50.5c0,0-64.355-6-86-6c-21.645,0-86,6-86,6c-27.891,0-50.5-22.609-50.5-50.5l0,0C13.5,34.609,36.109,12,64,12c0,0,64.355,6,86,6c21.645,0,86-6,86-6C263.891,12,286.5,34.609,286.5,62.5L286.5,62.5z">
+									<svg width="100%" height="100%" viewBox="0 0 300 125" preserveAspectRatio="none">
+										<path d="M286.5,62.5c0,27.891-22.609,50.5-50.5,50.5c0,0-64.355,0-86,0c-21.645,0-86,0-86,0c-27.891,0-50.5-22.609-50.5-50.5l0,0C13.5,34.609,36.109,12,64,12c0,0,64.355,0,86,0c21.645,0,86,0,86,0C263.891,12,286.5,34.609,286.5,62.5L286.5,62.5z"/>
+									</svg>
+								</span>
+								<span class="button__text">Консультация</span>
+							</button>
+							<button class="button button--fill button--effect-1">
+								<span class="morph-shape" data-morph-active="M286.5,62.5c0,27.891-22.609,50.5-50.5,50.5c0,0-64.355-6-86-6c-21.645,0-86,6-86,6c-27.891,0-50.5-22.609-50.5-50.5l0,0C13.5,34.609,36.109,12,64,12c0,0,64.355,6,86,6c21.645,0,86-6,86-6C263.891,12,286.5,34.609,286.5,62.5L286.5,62.5z">
+									<svg width="100%" height="100%" viewBox="0 0 300 125" preserveAspectRatio="none">
+										<path d="M286.5,62.5C286.5,90.39099999999999,263.891,113,236,113C236,113,171.64499999999998,113,150,113C128.355,113,64,113,64,113C36.109,113,13.5,90.39099999999999,13.5,62.5C13.5,62.5,13.5,62.5,13.5,62.5C13.5,34.609,36.109,12,64,12C64,12,128.35500000000002,12,150,12C171.645,12,236,12,236,12C263.891,12,286.5,34.609,286.5,62.5C286.5,62.5,286.5,62.5,286.5,62.5C286.5,62.5,286.5,62.5,286.5,62.5"></path>
+									<desc>Created with Snap</desc><defs></defs></svg>
+								</span>
+								<span class="button__text">Заказать</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- end header -->
+			
+			<div class="section is-blog">
+				<div class="section__in small-pad">
+					<h2 class="h2">Наш блог</h2>
+					<ul class="breadcrumbs">
+						<li><a href="#">Главная</a></li>
+					</ul>
+					<div class="consultation">
+						<div class="consultation__section">
+							<div class="consultation__number">+375 29 666 13 13</div>
+							<button class="button is-orange js-popup-btn">обратный звонок</button>
+							<div class="consultation__contacts">
+								<div class="is-orange">e-mail: <span>avtorskie@gmail.com</span></div>
+								<div>skype: <span>avtorskie</span></div>
+							</div>
+						</div>		
+						<div class="consultation__section">					
+							<div class="in-title">Диетолог</div>
+							<div class="c-blockquote">
+								<div class="c-blockquote__img"><img src="img/girl.png" alt=""></div>
+								<div class="c-blockquote__text">
+									<p>Для того, чтобы быть здоровым на все сто процентов, вам необходимо поддерживать свой организм в чистоте. Для этого вам нужно регулярно употреблять кобылье молоко и кумыс.</p>
+									<span>Марина Владимировна, врач-диетолог</span>
+								</div>
+							</div>
+						</div>	
+						<div class="consultation__section is-last js-form">
+							<div class="form-wrap">
+								<div class="in-title">Форма обратной  связи</div>
+								<div class="form">
+									<form action="" class="js-validate">
+										<div class="field">
+											<label>
+												<span>ваше имя<small>*</small></span>
+												<input type="text" class="input" data-validation="required">
+											</label>
+										</div>
+										<div class="field">
+											<label>
+												<span>телефон<small>*</small></span>
+												<input type="text" class="input" data-validation="required">
+											</label>
+										</div>
+										<div class="field">
+											<label>
+												<span>e-mail<small>*</small></span>
+												<input type="text" class="input" data-validation="email">
+											</label>
+										</div>
+										<div class="field">
+											<label>
+												<span>ваше сообщение</span>
+												<textarea name="" id="" cols="30" rows="10" class="textarea" data-validation="required"></textarea>
+											</label>
+										</div>
+										<div class="form__bottom">
+											<button type="submit" class="button is-orange js-form-btn">отправить</button>
+											<p>* Поля обязательны для заполнения</p>
+										</div>
+									</form>
+								</div>
+							</div>	
+							<div class="form-wrap is-hidden">
+								<div class="success">							
+									<div class="in-title">Спасибо!</div>
+									<p>В ближайшее время с вами свяжется наш менеджер!</p>
+									<button class="btn-refresh js-form-return"></button>
+								</div>
+							</div>					
+						</div>				
+					</div>
+				</div>
 			</div>
-			<a href="#main" class="logo logo_inner"><img src="img/logo.png" alt="logo"></a>
-			<div class="header__bl onright">
-				<div class="button-wrap">
-					<button class="button button--line button--effect-1">
-						<span class="morph-shape" data-morph-active="M286.5,62.5c0,27.891-22.609,50.5-50.5,50.5c0,0-64.355-6-86-6c-21.645,0-86,6-86,6c-27.891,0-50.5-22.609-50.5-50.5l0,0C13.5,34.609,36.109,12,64,12c0,0,64.355,6,86,6c21.645,0,86-6,86-6C263.891,12,286.5,34.609,286.5,62.5L286.5,62.5z">
-							<svg width="100%" height="100%" viewBox="0 0 300 125" preserveAspectRatio="none">
-								<path d="M286.5,62.5c0,27.891-22.609,50.5-50.5,50.5c0,0-64.355,0-86,0c-21.645,0-86,0-86,0c-27.891,0-50.5-22.609-50.5-50.5l0,0C13.5,34.609,36.109,12,64,12c0,0,64.355,0,86,0c21.645,0,86,0,86,0C263.891,12,286.5,34.609,286.5,62.5L286.5,62.5z"/>
-							</svg>
-						</span>
-						<span class="button__text">Консультация</span>
-					</button>
+			
+			<!-- begin footer  -->
+			<footer class="footer">
+				<div class="footer__in">
 					<button class="button button--fill button--effect-1">
 						<span class="morph-shape" data-morph-active="M286.5,62.5c0,27.891-22.609,50.5-50.5,50.5c0,0-64.355-6-86-6c-21.645,0-86,6-86,6c-27.891,0-50.5-22.609-50.5-50.5l0,0C13.5,34.609,36.109,12,64,12c0,0,64.355,6,86,6c21.645,0,86-6,86-6C263.891,12,286.5,34.609,286.5,62.5L286.5,62.5z">
 							<svg width="100%" height="100%" viewBox="0 0 300 125" preserveAspectRatio="none">
 								<path d="M286.5,62.5C286.5,90.39099999999999,263.891,113,236,113C236,113,171.64499999999998,113,150,113C128.355,113,64,113,64,113C36.109,113,13.5,90.39099999999999,13.5,62.5C13.5,62.5,13.5,62.5,13.5,62.5C13.5,34.609,36.109,12,64,12C64,12,128.35500000000002,12,150,12C171.645,12,236,12,236,12C263.891,12,286.5,34.609,286.5,62.5C286.5,62.5,286.5,62.5,286.5,62.5C286.5,62.5,286.5,62.5,286.5,62.5"></path>
 							<desc>Created with Snap</desc><defs></defs></svg>
 						</span>
-						<span class="button__text">Заказать</span>
+						<span class="button__text">Наверх</span>
 					</button>
+					<p class="footer__copy">© 2014, «БелКумысПром»</p>			
+					<p class="footer__made">Разработка сайта: <a href="#">Flex Media</a></p>
 				</div>
-			</div>
-		</div>
-	</header>
-	<!-- end header -->
-	
-	<div class="section is-blog">
-		<div class="section__in small-pad">
-			<h2 class="h2">Наш блог</h2>
-			<ul class="breadcrumbs">
-				<li><a href="#">Главная</a></li>
-			</ul>
-			<div class="consultation">
-				<div class="consultation__section">
-					<div class="consultation__number">+375 29 666 13 13</div>
-					<button class="button is-orange">обратный звонок</button>
-					<div class="consultation__contacts">
-						<div class="is-orange">e-mail: <span>avtorskie@gmail.com</span></div>
-						<div>skype: <span>avtorskie</span></div>
-					</div>
-				</div>		
-				<div class="consultation__section">					
-					<div class="in-title">Диетолог</div>
-					<div class="blockquote">
-						<div class="blockquote__img"><img src="img/girl.png" alt=""></div>
-						<div class="blockquote__text">
-							<p>Для того, чтобы быть здоровым на все сто процентов, вам необходимо поддерживать свой организм в чистоте. Для этого вам нужно регулярно употреблять кобылье молоко и кумыс.</p>
-							<span>Марина Владимировна, врач-диетолог</span>
-						</div>
-					</div>
-				</div>	
-				<div class="consultation__section is-last">
-					<div class="form-wrap">
-						<div class="in-title">Форма обратной  связи</div>
-						<div class="form">
-							<form action="" class="js-form">
-								<div class="field">
-									<label>
-										<span>ваше имя<small>*</small></span>
-										<input type="text" class="input" name="name" required>
-									</label>
-								</div>
-								<div class="field">
-									<label>
-										<span>телефон<small>*</small></span>
-										<input type="text" class="input" name="phone" required>
-									</label>
-								</div>
-								<div class="field">
-									<label>
-										<span>e-mail<small>*</small></span>
-										<input type="text" class="input" name="email" required>
-									</label>
-								</div>
-								<div class="field">
-									<label>
-										<span>ваше сообщение</span>
-										<textarea name="" id="" cols="30" rows="10" class="textarea" name="message" required></textarea>
-									</label>
-								</div>
-								<div class="form__bottom">
-									<button type="submit" class="button is-orange js-form-btn">отправить</button>
-									<p>* Поля обязательны для заполнения</p>
-								</div>
-							</form>
-						</div>
-					</div>	
-					<div class="form-wrap">
-						<div class="success">							
-							<div class="in-title">Спасибо!</div>
-							<p>В ближайшее время с вами свяжется наш менеджер!</p>
-							<a href="#" class="btn-refresh"></a>
-						</div>
-					</div>					
-				</div>				
+			</footer>
+			<!-- end footer -->
+			<div class="bg-wrap is-inner">
+				<div class="bg"></div>
 			</div>
 		</div>
 	</div>
 	
-	<!-- begin footer  -->
-	<footer class="footer">
-		<div class="footer__in">
-			<button class="button is-peach" type="button">Наверх</button>
-			<p class="footer__copy">© 2014, «БелКумысПром»</p>			
-			<p class="footer__made">Разработка сайта: <a href="#">Flex Media</a></p>
-		</div>
-	</footer>
-	<!-- end footer -->
-	<div class="bg-wrap">
-		<div class="bg"></div>
-	</div>
+	
+	<!-- begin mobile-menu -->
+	<nav class="mob">
+		<div class="mob__in">
+			<a href="#" class="mob__logo"><img src="img/logo-small.png" alt=""></a>
+			<div class="mob__nav">
+				<a href="#" class="mob__link">Авторские продукты</a>
+				<ul class="mob__menu">
+					<li><a href="#products">Продукты</a></li>
+					<li><a href="#blog">Блог</a></li>
+					<li><a href="#company">Компания</a></li>
+				</ul>
+			</div>
+			<div class="mob__nav">
+				<a href="#" class="mob__link is-active">Кобылье молоко<br>и кумыс</a>
+				<ul class="mob__menu">
+					<li><a href="#">Терапевтические свойства</a></li>
+					<li><a href="#">Производство</a></li>
+					<li><a href="#">Обслуживание</a></li>
+					<li><a href="#">Стоимость</a></li>
+				</ul>
+			</div>
+			<a href="#" class="mob__order">Заказать</a>
 
+		</div>
+	</nav>
+	<div class="mob-close js-mob-close">
+		<i class="icon-close"></i>
+		<span>Закрыть</span>
+	</div>
+	<!-- end mobile-menu -->
 </div>
 <!-- END out-->
+<div class="popup-wrap js-popup">
+	<div class="popup js-form-back">
+		<div class="popup__inner form-wrap">
+			<i class="popup__close js-popup-close"></i>
+			<div class="popup__logo"><img src="img/logo.png" alt=""></div>
+			<div class="form">
+				<form action="" class="js-validate">
+					<span class="form__title">Обратный звонок</span>
+					<div class="field">
+						<label>
+							<span>ваше имя<small>*</small></span>
+							<input type="text" class="input" data-validation="required">
+						</label>
+					</div>
+					<div class="field">
+						<label>
+							<span>телефон<small>*</small></span>
+							<input type="text" class="input" data-validation="required">
+						</label>
+					</div>
+					<div class="field">
+						<label>
+							<span>ваше сообщение</span>
+							<textarea name="" id="" cols="30" rows="10" class="textarea" data-validation="required"></textarea>
+						</label>
+					</div>
+					<div class="form__bottom">
+						<button type="submit" class="button is-orange js-form-btn">отправить</button>
+						<p>* Поля обязательны для заполнения</p>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="popup__inner form-wrap is-hidden">
+			<i class="popup__close js-popup-close"></i>
+			<div class="popup__logo"><img src="img/logo.png" alt=""></div>
+			<div class="popup__success">
+				<div class="success">							
+					<div class="in-title">Спасибо!</div>
+					<p>В ближайшее время с вами свяжется наш менеджер!</p>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
 </body>
